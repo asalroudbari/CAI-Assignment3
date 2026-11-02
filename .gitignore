@@ -1,0 +1,22 @@
+# Rebuilt by `python3 ablation/build_variants.py` (~170 MB) — don't commit
+ablation/corpora/
+
+# Course slides: distributed on Canvas, not part of the submission
+lectures/
+
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+
+# LaTeX build files (build with: cd report && latexmk -pdf main.tex)
+report/*.aux
+report/*.log
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/*.synctex.gz
+
+# PACE: Slurm logs from pace/run_pace.sh
+pace-*.out
