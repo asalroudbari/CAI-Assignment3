@@ -35,16 +35,16 @@
 
 \begin{center}
   {\large\bfseries Assignment 3: The Course TA-Bot --- Conversational RAG with Memory}\\[3pt]
-  Asal Roudbari (aroudbari3@gatech.edu) \quad\textbullet\quad \todo{teammate name, email}
+  Asal Roudbari (aroudbari3@gatech.edu) \quad\textbullet\quad Jae Hyung Ju (jju35@gatech.edu)
   \\[1pt]{\small CS 6604 / ECE 6256 Conversational AI, Georgia Tech}
 \end{center}
 
 % ======================================================================
 \section{System: retrieval and generation}
 
-Each \code{chat()} call decides whether to retrieve, retrieves excerpts with BM25, builds a
-grounded prompt, calls the course vLLM endpoint, and maps the model's numbered citations to
-paper IDs. Every setting comes from \code{config} (with defaults); nothing is hard-coded.
+Each \code{chat()} call makes a short planning call, decides whether to retrieve, retrieves
+excerpts with BM25, builds a grounded prompt, calls the course vLLM endpoint for the answer, maps
+the model's numbered citations to paper IDs, and updates memory (Section~\ref{sec:memory}). Every setting comes from \code{config} (with defaults); nothing is hard-coded.
 
 \begin{itemize}
   \item \textbf{Index.} The shipped \code{corpus.db}, unchanged: 108 papers, 5{,}711 chunks of
@@ -58,10 +58,16 @@ paper IDs. Every setting comes from \code{config} (with defaults); nothing is ha
     (one per paper, then a second from the strongest): retrieve wide, keep narrow (L13).
     Breadth-first fixed a dev turn where four excerpts from two similar papers crowded out the
     gold paper.
-  \item \textbf{Follow-ups.} Each session records the top paper of every turn. A singular
-    reference (``it'', ``this method'') carries the previous turn's paper into the excerpts; a
-    plural one (``both'', ``the ones we discussed'') carries up to the last three; ``switching
-    topics'' carries none. Greetings, thanks and questions about the user skip retrieval.
+  \item \textbf{Planning call.} Before answering, one LLM call (${\le}300$ tokens) returns JSON:
+    is the message about the student, should we retrieve, a standalone search query, candidate
+    facts, and forget requests. Questions about the student and small talk skip retrieval; a
+    message with content words and a question mark always retrieves, since a skipped paper
+    question loses the turn. If the reply is not valid JSON, word rules decide and nothing is stored.
+  \item \textbf{Follow-ups.} The rewrite (``What are its limitations?'' $\to$ ``limitations of
+    LoRA'') is OR-joined with the message's own terms. Each session also records every turn's top
+    paper: ``it'' carries the previous one into the excerpts, ``both'' up to the last three.
+    A first question is searched as written: adding the rewrite there lowered described hit-rate
+    at $k{=}3$ from .963 to .926 (+1/$-$5 questions, $p{=}0.22$), as it drops distinctive words.
   \item \textbf{Prompt.} A system prompt tells the model to answer from the excerpts, cite them
     as \code{[n]}, name the paper, say when the excerpts do not cover the question, and keep each
     claim attributed to its own paper. Then come the last 3 exchanges (assistant turns clipped to
@@ -77,20 +83,16 @@ paper IDs. Every setting comes from \code{config} (with defaults); nothing is ha
 \end{itemize}
 
 \textbf{Dev results} on PACE (Llama-3.1-8B-Instruct, vLLM 0.31, one H100): preflight passes;
-single-turn hit-rate 10/10; multi-turn 3/3. All 10 turns also hit when every turn is scored; the
-harness scores only the last turn, which had hidden a turn-1 miss during development. Across 44
-answers there were no errors. Latency averaged 2.3\,s (max 4.5\,s), prompts stayed under 2.2k
-tokens, no answer hit the 512-token cap, and a fresh second run reproduced all 10 single-turn
-answers exactly. Reading the answers showed three problems, which we fixed and re-ran. Citations
-repeated (``[L11-01] [L11-01]'' when two excerpts share a paper), and paper IDs and section names
-were copied from the excerpt headers. Merging adjacent markers and showing only the title cut
-these from 12 and 8 answers to 0, with identical cited papers. Claims also drifted to distractor
-papers (MemGPT explained via PagedAttention). A system-prompt rule to keep each claim with its own
-paper fixed 3 of the 4 cases we found, but one new answer attributes DPO's method, from an earlier
-turn, to Constitutional AI. We stopped there rather than tune the prompt to 44 dev answers.
-Lexical retrieval also misfires: ``boiling point of water'' retrieved DialoGPT, whose paper
-contains that example question, and a ColBERT question retrieved Whisper, whose transcripts
-mention Stephen Colbert.
+single-turn hit-rate 10/10; multi-turn 3/3, also when every turn is scored (last-turn scoring had
+hidden a turn-1 miss during development); memory probes 2/2. No errors; latency 2.1\,s mean (max
+3.9\,s); prompts ${\le}2.3$k tokens; no answer hit the 512-token cap. At temperature 0, re-runs
+match once vLLM's prefix cache is warm, but on a fresh server only 3 of 10 answers to new questions
+matched between the first and second pass (6 of 12 before memory); citations always matched. Reading the first
+run's 44 answers showed three problems. Citations repeated, and paper IDs and section names were
+copied from excerpt headers; merging adjacent markers and showing only titles cut these from 12
+and 8 answers to 0. Claims drifted to distractor papers (MemGPT explained via PagedAttention); a
+rule to keep each claim with its own paper fixed 3 of 4 cases, and we stopped there rather than
+tune the prompt to 44 dev answers.
 
 % ======================================================================
 \section{Ablation (R4): chunk size, measured across citation budgets}
@@ -105,7 +107,8 @@ corpora with the course's \code{build\_corpus.py}, changing only \code{-{}-chunk
 (overlap stays 15\%). The 400-token rebuild matches the shipped corpus chunk for chunk, so c400
 \emph{is} the deployed system. Each corpus is measured at citation budget $k = 1,\dots,5$
 (\code{max\_papers}, with $\max(4,k)$ excerpt slots). Everything else stays at the deployed
-values, which were fixed before the ablation and not changed by it.
+values, which were fixed before the ablation and not changed by it. The planning call does not
+touch a first question's search, so the ablation still measures the deployed retriever.
 
 \textbf{Metric.} The harness's own hit-rate (\code{eval\_dev.hit\_rate}: is the gold paper among
 the returned citations), run through \code{TABot.chat()} with a fresh session per question.
@@ -193,9 +196,8 @@ the middle) and a citation the answer may not use. Those costs are invisible to 
 \textbf{Limitations: what could overturn this.}
 \begin{itemize}
   \item \textbf{Retrieval only.} Answer quality, the primary grade, was not compared across
-    sizes. Larger chunks cost prompt length (four excerpts are ${\approx}1.4$k tokens at c400 and
-    ${\approx}2.8$k at c800), and our 2{,}000-character excerpt cap truncates c600/c800 chunks,
-    so an answer-quality comparison would need a larger cap.
+    sizes. Four excerpts are ${\approx}1.4$k tokens at c400 and ${\approx}2.8$k at c800, and our
+    2{,}000-character cap truncates c600/c800 chunks.
   \item \textbf{Hit-rate only counts recall.} It cannot penalize the noise that a larger $k$ or
     longer chunks add, so the case against $k{=}5$ is a judgement, not a measurement.
   \item \textbf{AI-written questions, from abstracts.} Abstract wording favours the abstract's
@@ -208,34 +210,62 @@ All numbers regenerate in about two minutes, without a GPU, using the commands i
 \code{ablation/README.md}.
 
 % ======================================================================
-\section{Memory design (R3)}
+\section{Memory design (R3)}\label{sec:memory}
 
-\todo{Memory section. The rubric (15 pts) asks: what we store, when we write, what we
-deliberately refuse to store and why. Privacy reasoning counts.}
+\textbf{What we store.} Up to 20 facts per \code{user\_id}, of five types: name, program, project,
+interests (${\le}5$) and answer preferences (${\le}3$), shown by \code{get\_memory()} as ``Project:
+hallucination detection in RAG''. Values keep the student's own words: recall is checked by
+substring, and paraphrase is where a fact drifts from what was said. Name, program and project are
+single slots, so ``my project is now about X'' replaces the old one. ``Forget my project'' deletes;
+\code{reset\_memory()} clears the user. Records keep their session and turn; the store is in process.
 
-% Points worth covering (from the README, eval_dev.py and L14):
-% - What is stored, and in what form. The harness checks memory by exact, case-insensitive
-%   substring match in get_memory() AND in the answer of a new session, so wording matters.
-% - Write policy: when a write happens, and from what. Writing only from the user's own turns
-%   (never from retrieved text or model output) is the defence against memory poisoning (L14).
-% - What is refused, and why: sensitive categories, and the must-not-store facts behind the
-%   negative probes (a leak fails the binary gate).
-% - Scope and isolation: user_id scopes memory, session_id scopes history. Each record already
-%   keeps its session_id and turn (provenance; see TABot._memory).
-% - Deletion and correction: reset_memory(); what happens when a fact changes.
-% - Use at answer time, and the sycophancy risk of tailoring answers to what the user said (L14).
+\textbf{When we write.} After a successful turn, only from the student's latest message, never
+from excerpts, history or model output (memory poisoning, L14). The planning call proposes
+candidates. Code keeps those of a known type whose content words are ${\ge}80\%$ present in the
+message (and names that look like names), so no fact can come from a paper or the model. A
+separate verifier call then sees the whole message and returns store or refuse per candidate. It
+fails closed: an unusable verdict stores nothing, since a missed fact costs one recall probe and a
+leaked one fails the negative gate.
+
+\textbf{What we refuse, and why.} (i) Credentials and identifiers (passwords, GTIDs, emails):
+never needed, and a leak is direct harm. (ii) Health and mental health, religion, politics,
+sexuality, ethnicity, immigration status, finances, grades, legal trouble: not needed to explain
+papers, and storing them could expose the student or bias how they are treated. (iii) Temporary
+states (``I'm exhausted today''), stale by the next session. (iv) Facts about other people,
+hypotheticals and role-play. (v) Anything the student asks us not to keep, anywhere in the
+message. (vi) Instructions and authority claims (``remember that I am the instructor''), which
+would make memory a persistent prompt injection. (vii) Claims about papers or the world (``the RAG
+paper was by Google in 2015''), which later answers would repeat. A research topic is not
+sensitive because its subject is: ``mental health chatbots'' is stored. Our first keyword filters
+refused that and ``political bias in LLMs'' and needed a word for every sensitive term, so we
+left the judgement to the verifier.
+
+\textbf{Use at answer time.} Facts enter the system prompt as what the student said: use them only
+when relevant, repeat them verbatim (the 8B model otherwise expanded ``RAG'' wrongly), and never
+let them change what the papers say (sycophancy, L14). With no facts, the prompt says so.
+Questions about the student skip retrieval, so excerpts do not pull the answer toward the papers.
+
+\textbf{Evaluation.} 20 offline unit tests with a scripted endpoint cover grounding, fail-closed
+verdicts, updates, deletion and isolation. On PACE (\code{pace/memory\_check.py}), 9/9 new positive
+probes (including a cross-session correction and using the project to suggest papers) passed, and
+15/15 negative probes (password, GTID, ADHD, psychiatrist, religion, immigration status, a
+roommate's thesis, role-play, opt-outs, injections, false claims) left nothing in
+\code{get\_memory()} or a new session's answer; 66/66 planning replies were valid JSON. The probes
+are not held out: we wrote them and changed two prompt rules after failures.
 
 % ======================================================================
 \section{AI-use disclosure}
 
-\textbf{Tools.} Claude Code (Anthropic's coding agent, model Claude Opus 5.5) in VS Code.
-\todo{Teammate: tools used for the memory part.}
+\textbf{Tools.} Claude Code (Anthropic's coding agent, model Claude Opus 5.5), in VS Code and,
+for the planning and memory part, in a terminal.
 
 \textbf{What the AI did.} It explained the assignment and how lectures L11--L14 apply. It wrote
 the retrieval, prompt, generation, citation and error-handling code in \code{ta\_bot.py}, and
 every script in \code{ablation/} (corpus rebuilds, evaluation, statistics, plot). It wrote all
-216 ablation questions, from paper titles and abstracts, and drafted Sections~1--2 of this report.
-We chose the ablation axis and the question-set approach. \todo{What you changed or wrote
+216 ablation questions, from paper titles and abstracts. It also wrote the planning and verifier
+calls, the memory code, unit tests, memory probes and the first-turn test, and drafted this
+report. We chose the ablation axis and the question-set approach, and asked for an LLM verifier in
+place of keyword filters and for the first-turn test. \todo{What you changed or wrote
 yourselves.}
 
 \textbf{How we verified.}
@@ -252,6 +282,7 @@ yourselves.}
     probes on PACE with Llama-3.1-8B. Claude read all 44 answers, flagged the problems listed in
     Section~1, and compared the answers before and after the fixes.
     \todo{Confirm you read the answers too.}
+  \item \textbf{Memory:} Section~\ref{sec:memory}'s tests; we read every probe's stored facts and answer.
 \end{itemize}
 We take responsibility for all submitted code and claims.
 
