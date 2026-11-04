@@ -1,0 +1,1817 @@
+{
+ "model": "Llama-3.1-8B-Instruct",
+ "passes": [
+  {
+   "abl-L01-01-named": {
+    "search_query": "deep-learning dialogue systems survey categories and future research directions",
+    "needs_retrieval": true
+   },
+   "abl-L01-01-described": {
+    "search_query": "overview paper conversational agents goal-driven chit-chat neural methods",
+    "needs_retrieval": true
+   },
+   "abl-L01-02-named": {
+    "search_query": "Meena SSA metric relation to perplexity and human-level conversation quality",
+    "needs_retrieval": true
+   },
+   "abl-L01-02-described": {
+    "search_query": "conversational model trained on filtered social media threads by minimizing perplexity",
+    "needs_retrieval": true
+   },
+   "abl-L01-03-named": {
+    "search_query": "LaMDA safety and groundedness beyond scaling",
+    "needs_retrieval": true
+   },
+   "abl-L01-03-described": {
+    "search_query": "137B-parameter conversational model fine-tuned with crowdworker labels to filter unsafe replies and call search tool translator and calculator",
+    "needs_retrieval": true
+   },
+   "abl-L01-04-named": {
+    "search_query": "conversational skills and generation-strategy choices in open-domain chatbot recipes",
+    "needs_retrieval": true
+   },
+   "abl-L01-04-described": {
+    "search_query": "paper mixing engagement empathy knowledge persona with decoding choices vs model size",
+    "needs_retrieval": true
+   },
+   "abl-L02-01-named": {
+    "search_query": "alignment-based RNN with attention jointly predicting intents and slot labels on ATIS, joint training improvement over separate models",
+    "needs_retrieval": true
+   },
+   "abl-L02-01-described": {
+    "search_query": "atis study adapting encoder-decoder models with explicit word-to-label alignment for user intent classification and query word tagging",
+    "needs_retrieval": true
+   },
+   "abl-L02-02-named": {
+    "search_query": "Joint BERT model vs attention-based RNN and slot-gated models on sentence-level semantic frame accuracy",
+    "needs_retrieval": true
+   },
+   "abl-L02-02-described": {
+    "search_query": "paper that fine-tunes a large pretrained bidirectional Transformer to predict user's goal and tag query words",
+    "needs_retrieval": true
+   },
+   "abl-L02-03-named": {
+    "search_query": "Snips Voice Platform private spoken language understanding real-time speech recognition NLU IoT hardware",
+    "needs_retrieval": true
+   },
+   "abl-L02-03-described": {
+    "search_query": "on-device assistant stack speech recognition command interpretation IoT chips no personal user data synthesis training data",
+    "needs_retrieval": true
+   },
+   "abl-L02-04-named": {
+    "search_query": "BI-LSTM-CRF model performance past and future features sentence-level tag information",
+    "needs_retrieval": true
+   },
+   "abl-L02-04-described": {
+    "search_query": "paper combining recurrent network with structured output layer for part-of-speech chunking and entity recognition",
+    "needs_retrieval": true
+   },
+   "abl-L02-05-named": {
+    "search_query": "L-TapNet label name semantics collapsed dependency transfer CRF transition scores few-shot slot tagging",
+    "needs_retrieval": true
+   },
+   "abl-L02-05-described": {
+    "search_query": "finding entity spans in user utterances from few example sentences using generic transition patterns and category embeddings",
+    "needs_retrieval": true
+   },
+   "abl-L03-01-named": {
+    "search_query": "end-to-end trainable neural task-oriented dialogue model pipelined Wizard-of-Oz framework data collection domain evaluation",
+    "needs_retrieval": true
+   },
+   "abl-L03-01-described": {
+    "search_query": "early work on single neural text-in/text-out model for restaurant recommendation trained on crowdsourced conversations",
+    "needs_retrieval": true
+   },
+   "abl-L03-02-named": {
+    "search_query": "NBT pre-trained word vectors semantic lexicons spoken language understanding modules",
+    "needs_retrieval": true
+   },
+   "abl-L03-02-described": {
+    "search_query": "model that composes pretrained word embeddings of utterance and context to infer user intent",
+    "needs_retrieval": true
+   },
+   "abl-L03-03-named": {
+    "search_query": "MultiWOZ dataset crowdsourcing without professional annotators benchmark tasks",
+    "needs_retrieval": true
+   },
+   "abl-L03-03-described": {
+    "search_query": "crowdsourced corpus of 10k written conversations with dialogue acts and belief states",
+    "needs_retrieval": true
+   },
+   "abl-L03-05-named": {
+    "search_query": "reward properties optimized in deep reinforcement learning dialogue generation policy gradients",
+    "needs_retrieval": true
+   },
+   "abl-L03-05-described": {
+    "search_query": "chatbots plan for long-term conversation success using policy gradients",
+    "needs_retrieval": true
+   },
+   "abl-L03-07-named": {
+    "search_query": "TRADE copy mechanism slot gate zero-shot tracking dialogue states",
+    "needs_retrieval": true
+   },
+   "abl-L03-07-described": {
+    "search_query": "belief tracking model produces (domain, slot, value) triples by copying words from conversation zero-shot across domains",
+    "needs_retrieval": true
+   },
+   "abl-L03-09-named": {
+    "search_query": "how Schema-Guided Dialogue dataset paradigm supports zero-shot new services with natural language descriptions of intents and slots",
+    "needs_retrieval": true
+   },
+   "abl-L03-09-described": {
+    "search_query": "16k-conversation corpus spanning 16 domains for zero-shot API integration",
+    "needs_retrieval": true
+   },
+   "abl-L04-01-named": {
+    "search_query": "CBOW and Skip-gram architectures in word2vec paper",
+    "needs_retrieval": true
+   },
+   "abl-L04-01-described": {
+    "search_query": "two simple log-linear architectures that learn continuous word vectors from over a billion words within a day judged on syntactic and semantic analogy questions",
+    "needs_retrieval": true
+   },
+   "abl-L04-02-named": {
+    "search_query": "negative sampling subsampling frequent words Skip-gram word2vec vectors phrases Air Canada",
+    "needs_retrieval": true
+   },
+   "abl-L04-02-described": {
+    "search_query": "word-embedding model follow-up that replaces hierarchical softmax with a simpler sampling-based objective, downsamples common words, and learns vectors for idiomatic multi-word expressions",
+    "needs_retrieval": true
+   },
+   "abl-L04-03-named": {
+    "search_query": "Sentence-BERT (SBERT) siamese and triplet network structures semantic similarity search",
+    "needs_retrieval": true
+   },
+   "abl-L04-03-described": {
+    "search_query": "twin-tower setup pretrained Transformer encoder cosine similarity",
+    "needs_retrieval": true
+   },
+   "abl-L04-04-named": {
+    "search_query": "Dense Passage Retrieval dual-encoder training from few question-passage pairs and comparison to BM25 on top-20 accuracy",
+    "needs_retrieval": true
+   },
+   "abl-L04-04-described": {
+    "search_query": "BERT encoders for trivia-style questions vs BM25",
+    "needs_retrieval": true
+   },
+   "abl-L04-05-named": {
+    "search_query": "ELMo word vectors from deep bidirectional language model layers",
+    "needs_retrieval": true
+   },
+   "abl-L04-05-described": {
+    "search_query": "word vectors that change with surrounding context combining every internal layer of a pretrained forward-and-backward language model boosting sentiment and entailment benchmarks",
+    "needs_retrieval": true
+   },
+   "abl-L05-01-named": {
+    "search_query": "RNN Encoder-Decoder as additional feature in phrase-based statistical machine translation system",
+    "needs_retrieval": true
+   },
+   "abl-L05-01-described": {
+    "search_query": "paper jointly trained recurrent networks compressing and expanding source sequence log-linear translation system",
+    "needs_retrieval": true
+   },
+   "abl-L05-02-named": {
+    "search_query": "unified neural architecture for POS tagging, chunking, NER, and semantic role labeling without task-specific features in NLP from scratch",
+    "needs_retrieval": true
+   },
+   "abl-L05-02-described": {
+    "search_query": "shared neural architecture for semantic roles named entities chunks and parts of speech from large unlabeled text",
+    "needs_retrieval": true
+   },
+   "abl-L05-03-named": {
+    "search_query": "gradient norm clipping proposal for RNNs exploding gradients vanishing gradient problem",
+    "needs_retrieval": true
+   },
+   "abl-L05-03-described": {
+    "search_query": "paper that rescales gradient norm in sequence models",
+    "needs_retrieval": true
+   },
+   "abl-L05-04-named": {
+    "search_query": "GRU vs LSTM gated units vs tanh units polyphonic music speech signal modeling",
+    "needs_retrieval": true
+   },
+   "abl-L05-04-described": {
+    "search_query": "LSTM vs newer cell and tanh units on polyphonic music and speech signal tasks",
+    "needs_retrieval": true
+   },
+   "abl-L06-01-named": {
+    "search_query": "ConVEx pairwise cloze pretraining objective Reddit slot-labeling task fine-tune decoding layers",
+    "needs_retrieval": true
+   },
+   "abl-L06-01-described": {
+    "search_query": "pretraining on Reddit fill-in-the-blank task for span tagging",
+    "needs_retrieval": true
+   },
+   "abl-L06-02-named": {
+    "search_query": "reading comprehension dialog state tracking slot value prediction closed ontology",
+    "needs_retrieval": true
+   },
+   "abl-L06-02-described": {
+    "search_query": "question-answering problem over dialogue history pointing at value spans",
+    "needs_retrieval": true
+   },
+   "abl-L06-03-named": {
+    "search_query": "instruction-tuned LLMs vs specialized models at explicit belief state tracking on task-oriented dialogue benchmarks with external databases",
+    "needs_retrieval": true
+   },
+   "abl-L06-03-described": {
+    "search_query": "instruction-following chat models multi-turn booking-style benchmarks slot values",
+    "needs_retrieval": true
+   },
+   "abl-L06-04-named": {
+    "search_query": "DialoGPT training data Reddit comment-chain exchanges response quality comparison to humans single-turn evaluation",
+    "needs_retrieval": true
+   },
+   "abl-L06-04-described": {
+    "search_query": "Transformer reply model trained on 147 million Reddit comment-thread exchanges",
+    "needs_retrieval": true
+   },
+   "abl-L07-01-named": {
+    "search_query": "seq2seq LSTM translation paper reversing word order source sentences English-to-French translation performance",
+    "needs_retrieval": true
+   },
+   "abl-L07-01-described": {
+    "search_query": "English to French paper deep LSTM fixed vector",
+    "needs_retrieval": true
+   },
+   "abl-L07-02-named": {
+    "search_query": "Bahdanau attention model soft-search over source positions remove fixed-length vector bottleneck encoder-decoder translation",
+    "needs_retrieval": true
+   },
+   "abl-L07-02-described": {
+    "search_query": "translation paper input compression limits performance",
+    "needs_retrieval": true
+   },
+   "abl-L07-03-named": {
+    "search_query": "Luong attention global vs local attention neural machine translation BLEU English-German WMT",
+    "needs_retrieval": true
+   },
+   "abl-L07-03-described": {
+    "search_query": "translation study WMT'15 English-to-German record source word vs source window",
+    "needs_retrieval": true
+   },
+   "abl-L07-04-named": {
+    "search_query": "Neural Conversational Model seq2seq framework IT helpdesk movie subtitle data consistency failure mode",
+    "needs_retrieval": true
+   },
+   "abl-L07-04-described": {
+    "search_query": "early paper sequence-mapping network next utterance prediction IT helpdesk dataset noisy movie subtitles inconsistent personality",
+    "needs_retrieval": true
+   },
+   "abl-L07-06-named": {
+    "search_query": "how MMI training objective reduces generic responses in seq2seq models",
+    "needs_retrieval": true
+   },
+   "abl-L07-06-described": {
+    "search_query": "likelihood criterion swapped for informative reply reward in chat systems",
+    "needs_retrieval": true
+   },
+   "abl-L08-01-named": {
+    "search_query": "Transformer parallelization and training speed for translation",
+    "needs_retrieval": true
+   },
+   "abl-L08-01-described": {
+    "search_query": "architecture paper drops recurrent and convolutional layers, direct token weighing, 28.4 BLEU WMT 2014 English-German",
+    "needs_retrieval": true
+   },
+   "abl-L08-02-named": {
+    "search_query": "how byte pair encoding segmentation into subword units enables open-vocabulary neural machine translation without a back-off dictionary",
+    "needs_retrieval": true
+   },
+   "abl-L08-02-described": {
+    "search_query": "translation paper data compression algorithm infrequent unseen words English-German English-Russian",
+    "needs_retrieval": true
+   },
+   "abl-L08-03-named": {
+    "search_query": "SentencePiece subword model training from raw sentences",
+    "needs_retrieval": true
+   },
+   "abl-L08-03-described": {
+    "search_query": "open-source library with C++ and Python bindings that learns vocabulary of word fragments directly from raw unsegmented sentences avoiding language-specific pre-splitting and validated on English-Japanese translation",
+    "needs_retrieval": true
+   },
+   "abl-L08-04-named": {
+    "search_query": "how RoPE in RoFormer uses a rotation matrix to encode absolute positions while capturing relative position dependencies in self-attention",
+    "needs_retrieval": true
+   },
+   "abl-L08-04-described": {
+    "search_query": "location information injection through angle-based query-key transformation",
+    "needs_retrieval": true
+   },
+   "abl-L08-05-named": {
+    "search_query": "FlashAttention tiling GPU high-bandwidth memory on-chip SRAM exact attention",
+    "needs_retrieval": true
+   },
+   "abl-L08-05-described": {
+    "search_query": "transformers lengthy sequences block-wise softmax on-chip GPU caches",
+    "needs_retrieval": true
+   },
+   "abl-L08-06-named": {
+    "search_query": "nucleus sampling vs beam search bland repetitive output",
+    "needs_retrieval": true
+   },
+   "abl-L08-06-described": {
+    "search_query": "paper on maximizing probability during generation yields dull looping output",
+    "needs_retrieval": true
+   },
+   "abl-L08-07-named": {
+    "search_query": "speculative decoding with smaller approximation model and large Transformer verification",
+    "needs_retrieval": true
+   },
+   "abl-L08-07-described": {
+    "search_query": "paper on parallel generation with cheaper model guessing tokens ahead",
+    "needs_retrieval": true
+   },
+   "abl-L09-01-named": {
+    "search_query": "BERT pre-training deep bidirectional representations conditioning on left and right context fine-tuning with one extra output layer",
+    "needs_retrieval": true
+   },
+   "abl-L09-01-described": {
+    "search_query": "encoder trained to fill in hidden words using context from both sides and eleven NLP tasks",
+    "needs_retrieval": true
+   },
+   "abl-L09-02-named": {
+    "search_query": "GPT-3 few-shot learning from text demonstrations",
+    "needs_retrieval": true
+   },
+   "abl-L09-02-described": {
+    "search_query": "175-billion-parameter autoregressive model few-shot learning from prompt",
+    "needs_retrieval": true
+   },
+   "abl-L09-03-named": {
+    "search_query": "scaling laws for neural language models power law loss model size data compute fixed budget allocation",
+    "needs_retrieval": true
+   },
+   "abl-L09-03-described": {
+    "search_query": "paper language model loss power function of parameters data and training compute",
+    "needs_retrieval": true
+   },
+   "abl-L09-04-named": {
+    "search_query": "Chinchilla study model size and training tokens scaling",
+    "needs_retrieval": true
+   },
+   "abl-L09-04-described": {
+    "search_query": "paper showing 70B model beats larger models at equal cost",
+    "needs_retrieval": true
+   },
+   "abl-L09-07-named": {
+    "search_query": "Llama 3 405B model capabilities and compositional approach for image video and speech abilities",
+    "needs_retrieval": true
+   },
+   "abl-L09-07-described": {
+    "search_query": "foundation models with 405-billion-parameter dense transformer and safety classifier",
+    "needs_retrieval": true
+   },
+   "abl-L09-08-named": {
+    "search_query": "emergent abilities of large language models definition and predictability from smaller models",
+    "needs_retrieval": true
+   },
+   "abl-L09-08-described": {
+    "search_query": "paper on skills absent in small language models but appear at larger scale",
+    "needs_retrieval": true
+   },
+   "abl-L10-01-named": {
+    "search_query": "InstructGPT supervised fine-tuning reinforcement learning ranked outputs user intent",
+    "needs_retrieval": true
+   },
+   "abl-L10-01-described": {
+    "search_query": "GPT-3 fine-tuning paper human-written demonstrations reinforcement learning",
+    "needs_retrieval": true
+   },
+   "abl-L10-03-named": {
+    "search_query": "reward model training on pairwise human comparisons for fine-tuning summarization policy in OpenAI's Reddit TL;DR summarization",
+    "needs_retrieval": true
+   },
+   "abl-L10-03-described": {
+    "search_query": "work that collected pairwise preferences between Reddit post versions and used RL to outperform ROUGE optimization",
+    "needs_retrieval": true
+   },
+   "abl-L10-04-named": {
+    "search_query": "DPO reparameterization of RLHF reward for simple classification loss",
+    "needs_retrieval": true
+   },
+   "abl-L10-04-described": {
+    "search_query": "RLHF objective closed-form optimal policy",
+    "needs_retrieval": true
+   },
+   "abl-L10-05-named": {
+    "search_query": "Constitutional AI self-critiques revisions RLAIF harmless assistant human labels",
+    "needs_retrieval": true
+   },
+   "abl-L10-05-described": {
+    "search_query": "safe yet non-evasive assistant using guiding principles model critiques and rewrites answers learns from model-generated preference labels",
+    "needs_retrieval": true
+   },
+   "abl-L10-06-named": {
+    "search_query": "LIMA fine-tuning 65B LLaMa model 1,000 curated examples knowledge acquisition",
+    "needs_retrieval": true
+   },
+   "abl-L10-06-described": {
+    "search_query": "paper that pretraining knowledge comes from nearly all of a model's knowledge",
+    "needs_retrieval": true
+   },
+   "abl-L10-07-named": {
+    "search_query": "sycophancy in language models human preference data preference models agree with users' beliefs",
+    "needs_retrieval": true
+   },
+   "abl-L10-07-described": {
+    "search_query": "paper on assistants trained with human ratings favoring agreeable answers",
+    "needs_retrieval": true
+   },
+   "abl-L10-10-named": {
+    "search_query": "RLVR in Tulu 3, training recipe with SFT and DPO",
+    "needs_retrieval": true
+   },
+   "abl-L10-10-described": {
+    "search_query": "recipe for refining base models after pretraining with datasets code and decontaminated evaluations and RL using rewards from automatically checkable answers",
+    "needs_retrieval": true
+   },
+   "abl-L11-01-named": {
+    "search_query": "LoRA inference latency compared to adapters",
+    "needs_retrieval": true
+   },
+   "abl-L11-01-described": {
+    "search_query": "paper that fine-tunes a huge pretrained model by freezing its weights and learning pairs of thin matrices",
+    "needs_retrieval": true
+   },
+   "abl-L11-02-named": {
+    "search_query": "QLoRA 4-bit NormalFloat double quantization paged optimizers fine-tune 65B model single 48GB GPU",
+    "needs_retrieval": true
+   },
+   "abl-L11-02-described": {
+    "search_query": "paper 4-bit precision 65-billion-parameter model 48GB GPU",
+    "needs_retrieval": true
+   },
+   "abl-L11-03-named": {
+    "search_query": "PagedAttention vLLM virtual memory paging KV cache fragmentation cache sharing across requests",
+    "needs_retrieval": true
+   },
+   "abl-L11-03-described": {
+    "search_query": "LLM hosting paper throughput improvement using non-contiguous fixed-size blocks and virtual memory",
+    "needs_retrieval": true
+   },
+   "abl-L11-06-named": {
+    "search_query": "Medusa extra decoding heads tree-based attention multiple candidate continuations",
+    "needs_retrieval": true
+   },
+   "abl-L11-06-described": {
+    "search_query": "LLM generation paper with tree-structured attention and extra output layers",
+    "needs_retrieval": true
+   },
+   "abl-L12-01-named": {
+    "search_query": "biases found by MT-Bench and Chatbot Arena when using GPT-4 as a judge of chat assistants",
+    "needs_retrieval": true
+   },
+   "abl-L12-01-described": {
+    "search_query": "GPT-4 grading chat assistants answers multi-turn questions crowdsourced voting platform",
+    "needs_retrieval": true
+   },
+   "abl-L12-03-named": {
+    "search_query": "USR dialog response evaluation without references or human labels, unsupervised models",
+    "needs_retrieval": true
+   },
+   "abl-L12-03-described": {
+    "search_query": "open-domain chatbot reply scoring paper combining sub-models no gold responses or human annotations correlates with Topical-Chat and PersonaChat",
+    "needs_retrieval": true
+   },
+   "abl-L12-04-named": {
+    "search_query": "correlation of machine-translation metrics like BLEU with human judgments on Twitter and Ubuntu in unsupervised dialogue response generation",
+    "needs_retrieval": true
+   },
+   "abl-L12-04-described": {
+    "search_query": "word-overlap scores machine translation human ratings chatbot replies Twitter Ubuntu technical chats",
+    "needs_retrieval": true
+   },
+   "abl-L12-05-named": {
+    "search_query": "movie-booking user simulator online reinforcement learning hand-crafted rules collected data",
+    "needs_retrieval": true
+   },
+   "abl-L12-05-described": {
+    "search_query": "public framework for training conversational agents with reinforcement learning from customers looking for films and buying cinema tickets",
+    "needs_retrieval": true
+   },
+   "abl-L12-06-named": {
+    "search_query": "how FairEval's Balanced Position Calibration counteracts bias in LLM ranking due to response order swapping",
+    "needs_retrieval": true
+   },
+   "abl-L12-06-described": {
+    "search_query": "Vicuna-13B calibration by averaging over answer orderings",
+    "needs_retrieval": true
+   },
+   "abl-L12-08-named": {
+    "search_query": "τ-bench tool-using agents evaluation final database state annotated goal state pass^k metric",
+    "needs_retrieval": true
+   },
+   "abl-L12-08-described": {
+    "search_query": "evaluation suite with language-model-played customer chat and domain API calls and policy guidelines and database and reliability checks",
+    "needs_retrieval": true
+   },
+   "abl-L13-01-named": {
+    "search_query": "RAG models combining pre-trained seq2seq generator with dense Wikipedia index and RAG-Sequence vs RAG-Token formulations",
+    "needs_retrieval": true
+   },
+   "abl-L13-01-described": {
+    "search_query": "seq2seq generator learned retriever Wikipedia vector index non-parametric memory open-domain QA fact-heavy tasks",
+    "needs_retrieval": true
+   },
+   "abl-L13-02-named": {
+    "search_query": "Lost in the Middle study language model accuracy context position",
+    "needs_retrieval": true
+   },
+   "abl-L13-02-described": {
+    "search_query": "language models performance with key document position in lengthy prompt",
+    "needs_retrieval": true
+   },
+   "abl-L13-03-named": {
+    "search_query": "BEIR zero-shot generalization across 18 datasets retrieval architectures BM25 vs dense retrievers",
+    "needs_retrieval": true
+   },
+   "abl-L13-03-described": {
+    "search_query": "neural search models transfer to new domains without in-domain training BM25 baseline",
+    "needs_retrieval": true
+   },
+   "abl-L13-04-named": {
+    "search_query": "ColBERT late interaction query document encoding BERT fine-grained token-level similarity",
+    "needs_retrieval": true
+   },
+   "abl-L13-04-described": {
+    "search_query": "paper that encodes queries and documents separately into per-token vectors and scores pairs by summing each query token's best match",
+    "needs_retrieval": true
+   },
+   "abl-L13-06-named": {
+    "search_query": "Self-RAG reflection tokens retrieve critique retrieved passages model outputs",
+    "needs_retrieval": true
+   },
+   "abl-L13-06-described": {
+    "search_query": "paper that trains one language model to fetch passages and emit tokens for relevance and support",
+    "needs_retrieval": true
+   },
+   "abl-L13-07-named": {
+    "search_query": "HyDE instruction-following LLM document generation Contriever zero-shot dense retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L13-07-described": {
+    "search_query": "unsupervised LLM passage generation and document retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L13-08-named": {
+    "search_query": "Ragas metrics for RAG pipelines without human annotations",
+    "needs_retrieval": true
+   },
+   "abl-L13-08-described": {
+    "search_query": "frameworks for scoring pipelines that combine search component with LLM answer writer along faithfulness, context relevance and answer relevance without human-labeled ground truth",
+    "needs_retrieval": true
+   },
+   "abl-L13-09-named": {
+    "search_query": "GraphRAG entity knowledge graph and pre-generated community summaries for global questions over a whole corpus",
+    "needs_retrieval": true
+   },
+   "abl-L13-09-described": {
+    "search_query": "LLM network of extracted entities, write overviews of related clusters, and combine partial answers",
+    "needs_retrieval": true
+   },
+   "abl-L13-12-named": {
+    "search_query": "GPT-2 conversational query rewriter weak supervision from ad hoc search sessions using rules and self-supervised learning TREC CAsT",
+    "needs_retrieval": true
+   },
+   "abl-L13-12-described": {
+    "search_query": "GPT-2 fine-tuning for self-contained follow-up questions from multi-turn search chat",
+    "needs_retrieval": true
+   },
+   "abl-L13-13-named": {
+    "search_query": "QReCC dataset subtasks and performance gap",
+    "needs_retrieval": true
+   },
+   "abl-L13-13-described": {
+    "search_query": "dataset multi-turn dialogues web-scale passage collection reformulate follow-up query evidence answer",
+    "needs_retrieval": true
+   },
+   "abl-L14-01-named": {
+    "search_query": "interrupts in MemGPT for control flow between LLM and user during memory tier data transfer",
+    "needs_retrieval": true
+   },
+   "abl-L14-01-described": {
+    "search_query": "language model prompt as main memory and pages information to and from external storage",
+    "needs_retrieval": true
+   },
+   "abl-L14-02-named": {
+    "search_query": "Generative Agents architecture observation reflection planning ablations believability",
+    "needs_retrieval": true
+   },
+   "abl-L14-02-described": {
+    "search_query": "Sims-like town populated with LLM-driven characters that reflect and plan",
+    "needs_retrieval": true
+   },
+   "abl-L14-03-named": {
+    "search_query": "LongMemEval memory abilities indexing and retrieval optimizations",
+    "needs_retrieval": true
+   },
+   "abl-L14-03-described": {
+    "search_query": "evaluation suite conversational AI recall user facts track knowledge updates reason about time know when to abstain",
+    "needs_retrieval": true
+   },
+   "abl-L14-04-named": {
+    "search_query": "LaMP benchmark tasks and personalized model output retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L14-04-described": {
+    "search_query": "benchmark for personalization of classification and generation outputs by retrieving relevant items from a person's own history of past writing",
+    "needs_retrieval": true
+   },
+   "abl-L14-05-named": {
+    "search_query": "NoLiMa needle-in-a-haystack test modification",
+    "needs_retrieval": true
+   },
+   "abl-L14-05-described": {
+    "search_query": "benchmark with vast filler text and accuracy collapse at 32K tokens",
+    "needs_retrieval": true
+   },
+   "abl-L14-06-named": {
+    "search_query": "how Mem0 extracts consolidates and retrieves salient facts from ongoing conversations and what its graph-based memory variant adds on top of the base system",
+    "needs_retrieval": true
+   },
+   "abl-L14-06-described": {
+    "search_query": "chatbot system for pulling and merging key facts from multi-session dialogues",
+    "needs_retrieval": true
+   },
+   "abl-L14-08-named": {
+    "search_query": "why retrieval-augmented and summarize-and-recall models outperform standard encoder-decoder chatbots in multi-session open-domain chat",
+    "needs_retrieval": true
+   },
+   "abl-L14-08-described": {
+    "search_query": "human-human chats revisiting past sessions",
+    "needs_retrieval": true
+   },
+   "abl-L15-01-named": {
+    "search_query": "how reinforced model and generic replacement labels let Llama2-7b forget books with one GPU hour of finetuning in Who's Harry Potter approach",
+    "needs_retrieval": true
+   },
+   "abl-L15-01-described": {
+    "search_query": "fine-tuning Llama on alternative token labels to erase copyrighted book series",
+    "needs_retrieval": true
+   },
+   "abl-L15-02-named": {
+    "search_query": "ROME causal tracing mid-layer feed-forward modules rank-one weight update",
+    "needs_retrieval": true
+   },
+   "abl-L15-02-described": {
+    "search_query": "causal interventions transformer knowledge tracing targeted MLP weight update",
+    "needs_retrieval": true
+   },
+   "abl-L15-03-named": {
+    "search_query": "what TOFU benchmark forget set synthetic author profiles measure about unlearning methods",
+    "needs_retrieval": true
+   },
+   "abl-L15-03-described": {
+    "search_query": "benchmark with 200 fake writer biographies and 20 quiz questions per biography",
+    "needs_retrieval": true
+   },
+   "abl-L15-04-named": {
+    "search_query": "SISA training partition and isolation of training data",
+    "needs_retrieval": true
+   },
+   "abl-L15-04-described": {
+    "search_query": "approach for deleting user records from trained model by splitting training",
+    "needs_retrieval": true
+   },
+   "abl-L16-01-named": {
+    "search_query": "chain-of-thought prompting with worked exemplars arithmetic and commonsense reasoning",
+    "needs_retrieval": true
+   },
+   "abl-L16-01-described": {
+    "search_query": "math word problems model demonstrations with intermediate steps",
+    "needs_retrieval": true
+   },
+   "abl-L16-02-named": {
+    "search_query": "self-consistency decoding multiple reasoning paths chain-of-thought prompting",
+    "needs_retrieval": true
+   },
+   "abl-L16-02-described": {
+    "search_query": "decoding methods that sample multiple step-by-step solutions and take a majority vote",
+    "needs_retrieval": true
+   },
+   "abl-L16-03-named": {
+    "search_query": "process supervision vs outcome supervision for reward models on MATH problems in PRM800K",
+    "needs_retrieval": true
+   },
+   "abl-L16-03-described": {
+    "search_query": "study on human grading of intermediate model math solution lines for reward model training",
+    "needs_retrieval": true
+   },
+   "abl-L16-04-named": {
+    "search_query": "prompt difficulty in compute-optimal test-time scaling verifier search vs sequential revisions",
+    "needs_retrieval": true
+   },
+   "abl-L16-04-described": {
+    "search_query": "study adaptive inference budget allocation difficulty FLOPs-matched comparisons",
+    "needs_retrieval": true
+   },
+   "abl-L16-05-named": {
+    "search_query": "DeepSeek-R1 pure reinforcement learning self-reflection verification",
+    "needs_retrieval": true
+   },
+   "abl-L16-05-described": {
+    "search_query": "reward-based training model that checks and revises its own work",
+    "needs_retrieval": true
+   },
+   "abl-L16-06-named": {
+    "search_query": "s1 budget forcing test-time compute control",
+    "needs_retrieval": true
+   },
+   "abl-L16-06-described": {
+    "search_query": "model fine-tuned on thousand curated hard problems and inserts 'Wait' token at inference",
+    "needs_retrieval": true
+   },
+   "abl-L16-07-named": {
+    "search_query": "Tree of Thoughts language model exploration self-evaluation backtracking intermediate thoughts performance on Game of 24",
+    "needs_retrieval": true
+   },
+   "abl-L16-07-described": {
+    "search_query": "inference framework with lookahead and backtracking that improves Game of 24 success from 4% to 74%",
+    "needs_retrieval": true
+   },
+   "abl-L16-08-named": {
+    "search_query": "chain-of-thought faithfulness hints in reasoning model prompts",
+    "needs_retrieval": true
+   },
+   "abl-L16-08-described": {
+    "search_query": "safety study hints in prompts model reliance on hints without admitting",
+    "needs_retrieval": true
+   },
+   "abl-L17-01-named": {
+    "search_query": "how ReAct reduces hallucination on HotpotQA and FEVER",
+    "needs_retrieval": true
+   },
+   "abl-L17-01-described": {
+    "search_query": "prompting approach model alternates between writing out thoughts and issuing actions on tasks such as ALFWorld",
+    "needs_retrieval": true
+   },
+   "abl-L17-02-named": {
+    "search_query": "Toolformer self-supervised API calls and result usage",
+    "needs_retrieval": true
+   },
+   "abl-L17-02-described": {
+    "search_query": "model that learns from few examples to insert API calls into its own text",
+    "needs_retrieval": true
+   },
+   "abl-L17-03-named": {
+    "search_query": "WebArena hosted websites GPT-4 performance comparison with humans",
+    "needs_retrieval": true
+   },
+   "abl-L17-03-described": {
+    "search_query": "benchmark for long multi-step browser tasks with online shopping forums code collaboration and content management",
+    "needs_retrieval": true
+   },
+   "abl-L17-04-named": {
+    "search_query": "SWE-bench task building from GitHub issues and pull requests",
+    "needs_retrieval": true
+   },
+   "abl-L17-04-described": {
+    "search_query": "benchmark where model is given Python repository and bug report and asked to patch with Claude 2 fixing under 2% of cases",
+    "needs_retrieval": true
+   },
+   "abl-L17-05-named": {
+    "search_query": "AgentDojo prompt injection attacks and defenses extensibility",
+    "needs_retrieval": true
+   },
+   "abl-L17-05-described": {
+    "search_query": "extensible testbed malicious text hijack assistant tasks email banking travel booking safeguards",
+    "needs_retrieval": true
+   },
+   "abl-L17-07-named": {
+    "search_query": "OSWorld multimodal agents evaluation across Ubuntu Windows macOS weaknesses",
+    "needs_retrieval": true
+   },
+   "abl-L17-07-described": {
+    "search_query": "benchmark for AI models operating on Ubuntu, macOS, and Windows desktops",
+    "needs_retrieval": true
+   },
+   "abl-L17-08-named": {
+    "search_query": "BAGEL round-trips between LM labeler and zero-shot LM agent synthetic demonstrations",
+    "needs_retrieval": true
+   },
+   "abl-L17-08-described": {
+    "search_query": "method with one model captioning random action sequences and another re-executing them to build demonstrations for models acting on websites or APIs",
+    "needs_retrieval": true
+   },
+   "abl-L17-10-named": {
+    "search_query": "SWE-RL rule-based similarity reward open-source software evolution data Llama 3 GitHub issue fixing",
+    "needs_retrieval": true
+   },
+   "abl-L17-10-described": {
+    "search_query": "Llama 3 model trained with rewards based on patch matching developer fixes from repository histories",
+    "needs_retrieval": true
+   },
+   "abl-L17-13-named": {
+    "search_query": "joint optimization of cost and accuracy in agent benchmarking practices, problems with inadequate holdout sets",
+    "needs_retrieval": true
+   },
+   "abl-L17-13-described": {
+    "search_query": "autonomous LLM systems benchmarking criticism cost held-out sets reproducibility",
+    "needs_retrieval": true
+   },
+   "abl-L18-01-named": {
+    "search_query": "wav2vec 2.0 masking latent speech representations and contrastive task over quantized targets during pretraining",
+    "needs_retrieval": true
+   },
+   "abl-L18-01-described": {
+    "search_query": "pretraining approach for accurate recognizers with limited transcribed recordings",
+    "needs_retrieval": true
+   },
+   "abl-L19-01-named": {
+    "search_query": "Whisper training on weakly supervised multilingual audio zero-shot transfer to standard benchmarks",
+    "needs_retrieval": true
+   },
+   "abl-L19-01-described": {
+    "search_query": "audio transcription model trained on noisy internet transcripts zero-shot",
+    "needs_retrieval": true
+   },
+   "abl-L20-01-named": {
+    "search_query": "SoundStream residual vector quantizer with quantizer dropout bitrate range",
+    "needs_retrieval": true
+   },
+   "abl-L20-01-described": {
+    "search_query": "learned compression model for speech and music with convolutional encoder-decoder stacked residual quantization adversarial training beats Opus at quarter bitrate",
+    "needs_retrieval": true
+   },
+   "abl-L21-01-named": {
+    "search_query": "Moshi model parallel streams user speech and model speech, Inner Monologue method predicting text before audio tokens",
+    "needs_retrieval": true
+   },
+   "abl-L21-01-described": {
+    "search_query": "spoken chatbot generates voice directly as codec tokens models both speakers in parallel handles interruptions without fixed turns predicts aligned word tokens before sound",
+    "needs_retrieval": true
+   },
+   "abl-L22-03-named": {
+    "search_query": "indirect prompt injection attacks on LLM-integrated applications",
+    "needs_retrieval": true
+   },
+   "abl-L22-03-described": {
+    "search_query": "security paper malicious instructions in web pages or documents read by AI assistant",
+    "needs_retrieval": true
+   },
+   "abl-L23-02-named": {
+    "search_query": "LLaVA language-only GPT-4 multimodal instruction-following data generation vision encoder LLM connection",
+    "needs_retrieval": true
+   },
+   "abl-L23-02-described": {
+    "search_query": "model linking pretrained image encoder to chat LLM fine-tuned on image-grounded conversations with text-only GPT-4 ScienceQA",
+    "needs_retrieval": true
+   },
+   "abl-L24-01-named": {
+    "search_query": "induction heads mechanism behind in-context learning transformer models",
+    "needs_retrieval": true
+   },
+   "abl-L24-01-described": {
+    "search_query": "transformer prompt ability attention circuits interpretability work",
+    "needs_retrieval": true
+   },
+   "dev-st-01": {
+    "search_query": "LaMDA safety mechanisms for filtering unsafe responses",
+    "needs_retrieval": true
+   },
+   "dev-st-02": {
+    "search_query": "Dense Passage Retrieval bi-encoder training and performance on open-domain QA benchmarks",
+    "needs_retrieval": true
+   },
+   "dev-st-03": {
+    "search_query": "multi-head self-attention mechanism original Transformer paper recurrence replacement",
+    "needs_retrieval": true
+   },
+   "dev-st-04": {
+    "search_query": "BERT pre-training objectives masked language model vs left-to-right language modeling",
+    "needs_retrieval": true
+   },
+   "dev-st-05": {
+    "search_query": "how Direct Preference Optimization eliminates need for separate reward model during alignment",
+    "needs_retrieval": true
+   },
+   "dev-st-06": {
+    "search_query": "how LoRA reduces trainable parameters using low-rank decomposition of weight update matrices",
+    "needs_retrieval": true
+   },
+   "dev-st-07": {
+    "search_query": "how RAG combines retriever with sequence-to-sequence generator and improves factual accuracy",
+    "needs_retrieval": true
+   },
+   "dev-st-08": {
+    "search_query": "how MemGPT organizes memory into a hierarchy that mirrors an operating system's virtual memory to support long conversations",
+    "needs_retrieval": true
+   },
+   "dev-st-09": {
+    "search_query": "chain-of-thought prompting arithmetic and commonsense reasoning in large language models",
+    "needs_retrieval": true
+   },
+   "dev-st-10": {
+    "search_query": "ReAct framework interleaving reasoning traces with actions task completion for language model agents",
+    "needs_retrieval": true
+   }
+  },
+  {
+   "abl-L01-01-named": {
+    "search_query": "deep-learning dialogue systems survey categories and future research directions",
+    "needs_retrieval": true
+   },
+   "abl-L01-01-described": {
+    "search_query": "overview paper conversational agents goal-driven chit-chat types neural methods",
+    "needs_retrieval": true
+   },
+   "abl-L01-02-named": {
+    "search_query": "Meena SSA metric relation to perplexity and human-level conversation quality",
+    "needs_retrieval": true
+   },
+   "abl-L01-02-described": {
+    "search_query": "conversational model trained on filtered social media threads by minimizing perplexity",
+    "needs_retrieval": true
+   },
+   "abl-L01-03-named": {
+    "search_query": "LaMDA safety and groundedness beyond scaling",
+    "needs_retrieval": true
+   },
+   "abl-L01-03-described": {
+    "search_query": "137B-parameter conversational model fine-tuned with crowdworker labels to filter unsafe replies and call search tool translator and calculator",
+    "needs_retrieval": true
+   },
+   "abl-L01-04-named": {
+    "search_query": "conversational skills and generation-strategy choices in open-domain chatbot recipes",
+    "needs_retrieval": true
+   },
+   "abl-L01-04-described": {
+    "search_query": "paper mixing engagement empathy knowledge persona with decoding choices vs model size",
+    "needs_retrieval": true
+   },
+   "abl-L02-01-named": {
+    "search_query": "alignment-based RNN with attention jointly predicting intents and slot labels on ATIS, joint training vs separate models",
+    "needs_retrieval": true
+   },
+   "abl-L02-01-described": {
+    "search_query": "atis study adapting encoder-decoder models with explicit word-to-label alignment for user intent classification and query word tagging",
+    "needs_retrieval": true
+   },
+   "abl-L02-02-named": {
+    "search_query": "Joint BERT model vs attention-based RNN and slot-gated models on sentence-level semantic frame accuracy",
+    "needs_retrieval": true
+   },
+   "abl-L02-02-described": {
+    "search_query": "paper fine-tunes large pretrained bidirectional Transformer to predict user's goal and tag query words",
+    "needs_retrieval": true
+   },
+   "abl-L02-03-named": {
+    "search_query": "Snips Voice Platform private spoken language understanding real-time speech recognition NLU IoT hardware",
+    "needs_retrieval": true
+   },
+   "abl-L02-03-described": {
+    "search_query": "on-device assistant stack speech recognition command interpretation IoT chips no personal user data training data synthesis",
+    "needs_retrieval": true
+   },
+   "abl-L02-04-named": {
+    "search_query": "BI-LSTM-CRF model performance past and future features sentence-level tag information POS chunking NER",
+    "needs_retrieval": true
+   },
+   "abl-L02-04-described": {
+    "search_query": "paper combining recurrent network with structured output layer for part-of-speech chunking and entity recognition",
+    "needs_retrieval": true
+   },
+   "abl-L02-05-named": {
+    "search_query": "L-TapNet label name semantics collapsed dependency transfer CRF transition scores few-shot slot tagging",
+    "needs_retrieval": true
+   },
+   "abl-L02-05-described": {
+    "search_query": "finding entity spans in user utterances from few example sentences using generic transition patterns and category embeddings",
+    "needs_retrieval": true
+   },
+   "abl-L03-01-named": {
+    "search_query": "end-to-end trainable neural task-oriented dialogue model pipelined Wizard-of-Oz framework data collection domain evaluation",
+    "needs_retrieval": true
+   },
+   "abl-L03-01-described": {
+    "search_query": "early work on single neural text-in/text-out model for restaurant recommendation trained on crowdsourced conversations",
+    "needs_retrieval": true
+   },
+   "abl-L03-02-named": {
+    "search_query": "NBT pre-trained word vectors semantic lexicons spoken language understanding modules",
+    "needs_retrieval": true
+   },
+   "abl-L03-02-described": {
+    "search_query": "model that composes pretrained word embeddings of utterance and context to infer user intent",
+    "needs_retrieval": true
+   },
+   "abl-L03-03-named": {
+    "search_query": "MultiWOZ dataset crowdsourcing without professional annotators benchmark tasks",
+    "needs_retrieval": true
+   },
+   "abl-L03-03-described": {
+    "search_query": "crowdsourced corpus of 10k written conversations with dialogue acts and belief states",
+    "needs_retrieval": true
+   },
+   "abl-L03-05-named": {
+    "search_query": "reward properties optimized in deep reinforcement learning dialogue generation policy gradients",
+    "needs_retrieval": true
+   },
+   "abl-L03-05-described": {
+    "search_query": "chatbots plan for long-term conversation success using policy gradients",
+    "needs_retrieval": true
+   },
+   "abl-L03-07-named": {
+    "search_query": "TRADE copy mechanism slot gate zero-shot tracking dialogue states",
+    "needs_retrieval": true
+   },
+   "abl-L03-07-described": {
+    "search_query": "belief tracking model produces (domain, slot, value) triples by copying words from conversation zero-shot across domains",
+    "needs_retrieval": true
+   },
+   "abl-L03-09-named": {
+    "search_query": "how Schema-Guided Dialogue dataset paradigm supports zero-shot new services with natural language descriptions of intents and slots",
+    "needs_retrieval": true
+   },
+   "abl-L03-09-described": {
+    "search_query": "16k-conversation corpus spanning 16 domains for zero-shot API integration",
+    "needs_retrieval": true
+   },
+   "abl-L04-01-named": {
+    "search_query": "CBOW and Skip-gram architectures in word2vec paper",
+    "needs_retrieval": true
+   },
+   "abl-L04-01-described": {
+    "search_query": "two simple log-linear architectures that learn continuous word vectors from over a billion words within a day judged on syntactic and semantic analogy questions",
+    "needs_retrieval": true
+   },
+   "abl-L04-02-named": {
+    "search_query": "negative sampling subsampling frequent words Skip-gram word2vec vectors phrases Air Canada",
+    "needs_retrieval": true
+   },
+   "abl-L04-02-described": {
+    "search_query": "word-embedding model follow-up that replaces hierarchical softmax with a simpler sampling-based objective, downsamples common words, and learns vectors for idiomatic multi-word expressions",
+    "needs_retrieval": true
+   },
+   "abl-L04-03-named": {
+    "search_query": "Sentence-BERT (SBERT) siamese and triplet network structures semantic similarity search",
+    "needs_retrieval": true
+   },
+   "abl-L04-03-described": {
+    "search_query": "twin-tower setup pretrained Transformer encoder cosine similarity",
+    "needs_retrieval": true
+   },
+   "abl-L04-04-named": {
+    "search_query": "Dense Passage Retrieval dual-encoder training from few question-passage pairs and comparison to BM25 on top-20 accuracy",
+    "needs_retrieval": true
+   },
+   "abl-L04-04-described": {
+    "search_query": "BERT encoders for trivia-style questions vs BM25",
+    "needs_retrieval": true
+   },
+   "abl-L04-05-named": {
+    "search_query": "ELMo word vectors from deep bidirectional language model layers",
+    "needs_retrieval": true
+   },
+   "abl-L04-05-described": {
+    "search_query": "word vectors that change with surrounding context combining every internal layer of a pretrained forward-and-backward language model boosting sentiment and entailment benchmarks",
+    "needs_retrieval": true
+   },
+   "abl-L05-01-named": {
+    "search_query": "RNN Encoder-Decoder as additional feature in phrase-based statistical machine translation system",
+    "needs_retrieval": true
+   },
+   "abl-L05-01-described": {
+    "search_query": "paper jointly trained recurrent networks compressing and expanding source sequence log-linear translation system",
+    "needs_retrieval": true
+   },
+   "abl-L05-02-named": {
+    "search_query": "unified neural architecture for POS tagging, chunking, NER, and semantic role labeling without task-specific features in NLP from scratch",
+    "needs_retrieval": true
+   },
+   "abl-L05-02-described": {
+    "search_query": "shared neural architecture for semantic roles named entities chunks and parts of speech from large unlabeled text",
+    "needs_retrieval": true
+   },
+   "abl-L05-03-named": {
+    "search_query": "gradient norm clipping proposal for RNNs exploding gradients vanishing gradient problem",
+    "needs_retrieval": true
+   },
+   "abl-L05-03-described": {
+    "search_query": "paper that analyzes why gradients blow up or shrink in sequence models from geometric and dynamical-systems viewpoints and proposes rescaling the gradient whenever its norm gets too large",
+    "needs_retrieval": true
+   },
+   "abl-L05-04-named": {
+    "search_query": "GRU vs LSTM gated units vs tanh units polyphonic music speech signal modeling",
+    "needs_retrieval": true
+   },
+   "abl-L05-04-described": {
+    "search_query": "LSTM vs newer cell and tanh units on polyphonic music and speech signal tasks",
+    "needs_retrieval": true
+   },
+   "abl-L06-01-named": {
+    "search_query": "ConVEx pairwise cloze pretraining objective Reddit slot-labeling task fine-tune decoding layers",
+    "needs_retrieval": true
+   },
+   "abl-L06-01-described": {
+    "search_query": "pretraining on Reddit fill-in-the-blank task for span tagging",
+    "needs_retrieval": true
+   },
+   "abl-L06-02-named": {
+    "search_query": "reading comprehension dialog state tracking slot value prediction closed ontology",
+    "needs_retrieval": true
+   },
+   "abl-L06-02-described": {
+    "search_query": "question-answering problem over dialogue history for user goals",
+    "needs_retrieval": true
+   },
+   "abl-L06-03-named": {
+    "search_query": "instruction-tuned LLMs vs specialized models at explicit belief state tracking on task-oriented dialogue benchmarks with external databases",
+    "needs_retrieval": true
+   },
+   "abl-L06-03-described": {
+    "search_query": "instruction-following chat models multi-turn booking-style benchmarks slot values",
+    "needs_retrieval": true
+   },
+   "abl-L06-04-named": {
+    "search_query": "DialoGPT training data Reddit comment-chain exchanges response quality comparison to humans single-turn evaluation",
+    "needs_retrieval": true
+   },
+   "abl-L06-04-described": {
+    "search_query": "Transformer reply model trained on 147 million Reddit comment-thread exchanges",
+    "needs_retrieval": true
+   },
+   "abl-L07-01-named": {
+    "search_query": "seq2seq LSTM translation paper reversing word order source sentences English-to-French translation performance",
+    "needs_retrieval": true
+   },
+   "abl-L07-01-described": {
+    "search_query": "English to French paper deep LSTM fixed vector",
+    "needs_retrieval": true
+   },
+   "abl-L07-02-named": {
+    "search_query": "Bahdanau attention model soft-search over source positions remove fixed-length vector bottleneck encoder-decoder translation",
+    "needs_retrieval": true
+   },
+   "abl-L07-02-described": {
+    "search_query": "translation paper input compression limits performance",
+    "needs_retrieval": true
+   },
+   "abl-L07-03-named": {
+    "search_query": "Luong attention global vs local attention neural machine translation BLEU English-German WMT",
+    "needs_retrieval": true
+   },
+   "abl-L07-03-described": {
+    "search_query": "translation study WMT'15 English-to-German record source word vs source window",
+    "needs_retrieval": true
+   },
+   "abl-L07-04-named": {
+    "search_query": "Neural Conversational Model seq2seq framework IT helpdesk movie subtitle data consistency failure mode",
+    "needs_retrieval": true
+   },
+   "abl-L07-04-described": {
+    "search_query": "early paper sequence-mapping network next utterance prediction IT helpdesk dataset noisy movie subtitles inconsistent personality",
+    "needs_retrieval": true
+   },
+   "abl-L07-06-named": {
+    "search_query": "how MMI training objective reduces generic responses in seq2seq models",
+    "needs_retrieval": true
+   },
+   "abl-L07-06-described": {
+    "search_query": "likelihood criterion swapped for informative reply reward in chat systems",
+    "needs_retrieval": true
+   },
+   "abl-L08-01-named": {
+    "search_query": "Transformer parallelization and training speed for translation",
+    "needs_retrieval": true
+   },
+   "abl-L08-01-described": {
+    "search_query": "architecture paper drops recurrent and convolutional layers, direct token weighing, 28.4 BLEU WMT 2014 English-German",
+    "needs_retrieval": true
+   },
+   "abl-L08-02-named": {
+    "search_query": "how byte pair encoding segmentation into subword units enables open-vocabulary neural machine translation without a back-off dictionary",
+    "needs_retrieval": true
+   },
+   "abl-L08-02-described": {
+    "search_query": "translation paper data compression algorithm infrequent unseen words English-German English-Russian",
+    "needs_retrieval": true
+   },
+   "abl-L08-03-named": {
+    "search_query": "SentencePiece subword models raw sentences pre-tokenization language independence",
+    "needs_retrieval": true
+   },
+   "abl-L08-03-described": {
+    "search_query": "open-source library with C++ and Python bindings that learns vocabulary of word fragments from raw sentences and is validated on English-Japanese translation",
+    "needs_retrieval": true
+   },
+   "abl-L08-04-named": {
+    "search_query": "how RoPE in RoFormer uses a rotation matrix to encode absolute positions while capturing relative position dependencies in self-attention",
+    "needs_retrieval": true
+   },
+   "abl-L08-04-described": {
+    "search_query": "location information injection through angle-based query-key transformation",
+    "needs_retrieval": true
+   },
+   "abl-L08-05-named": {
+    "search_query": "FlashAttention tiling GPU high-bandwidth memory on-chip SRAM exact attention",
+    "needs_retrieval": true
+   },
+   "abl-L08-05-described": {
+    "search_query": "transformers lengthy sequences block-wise softmax on-chip GPU caches",
+    "needs_retrieval": true
+   },
+   "abl-L08-06-named": {
+    "search_query": "nucleus sampling vs beam search bland repetitive output",
+    "needs_retrieval": true
+   },
+   "abl-L08-06-described": {
+    "search_query": "paper on maximizing probability during generation yields dull looping output",
+    "needs_retrieval": true
+   },
+   "abl-L08-07-named": {
+    "search_query": "speculative decoding with smaller approximation model and large Transformer verification",
+    "needs_retrieval": true
+   },
+   "abl-L08-07-described": {
+    "search_query": "paper on parallel generation with cheaper model guessing tokens ahead",
+    "needs_retrieval": true
+   },
+   "abl-L09-01-named": {
+    "search_query": "BERT pre-training deep bidirectional representations conditioning on left and right context fine-tuning with one extra output layer",
+    "needs_retrieval": true
+   },
+   "abl-L09-01-described": {
+    "search_query": "encoder trained to fill in hidden words using context from both sides and eleven NLP tasks",
+    "needs_retrieval": true
+   },
+   "abl-L09-02-named": {
+    "search_query": "GPT-3 few-shot learning from text demonstrations",
+    "needs_retrieval": true
+   },
+   "abl-L09-02-described": {
+    "search_query": "175-billion-parameter autoregressive model few-shot learning from prompt",
+    "needs_retrieval": true
+   },
+   "abl-L09-03-named": {
+    "search_query": "scaling laws for neural language models power law loss model size data compute fixed budget allocation",
+    "needs_retrieval": true
+   },
+   "abl-L09-03-described": {
+    "search_query": "paper language model loss power function of parameters data and training compute",
+    "needs_retrieval": true
+   },
+   "abl-L09-04-named": {
+    "search_query": "Chinchilla study model size and training tokens scaling",
+    "needs_retrieval": true
+   },
+   "abl-L09-04-described": {
+    "search_query": "paper showing 70B model beats larger models at equal cost",
+    "needs_retrieval": true
+   },
+   "abl-L09-07-named": {
+    "search_query": "Llama 3 405B model capabilities and compositional approach for image video and speech abilities",
+    "needs_retrieval": true
+   },
+   "abl-L09-07-described": {
+    "search_query": "foundation models with 405-billion-parameter dense transformer and safety classifier",
+    "needs_retrieval": true
+   },
+   "abl-L09-08-named": {
+    "search_query": "emergent abilities of large language models definition and predictability from smaller models",
+    "needs_retrieval": true
+   },
+   "abl-L09-08-described": {
+    "search_query": "paper on skills absent in small language models but appear at larger scale",
+    "needs_retrieval": true
+   },
+   "abl-L10-01-named": {
+    "search_query": "InstructGPT supervised fine-tuning reinforcement learning ranked outputs user intent",
+    "needs_retrieval": true
+   },
+   "abl-L10-01-described": {
+    "search_query": "GPT-3 fine-tuning paper human-written demonstrations reinforcement learning",
+    "needs_retrieval": true
+   },
+   "abl-L10-03-named": {
+    "search_query": "reward model training on pairwise human comparisons for fine-tuning summarization policy in OpenAI's Reddit TL;DR summarization",
+    "needs_retrieval": true
+   },
+   "abl-L10-03-described": {
+    "search_query": "work that collected pairwise preferences between Reddit post versions and used RL to outperform ROUGE optimization",
+    "needs_retrieval": true
+   },
+   "abl-L10-04-named": {
+    "search_query": "DPO reparameterization of RLHF reward for simple classification loss",
+    "needs_retrieval": true
+   },
+   "abl-L10-04-described": {
+    "search_query": "RLHF objective closed-form optimal policy",
+    "needs_retrieval": true
+   },
+   "abl-L10-05-named": {
+    "search_query": "Constitutional AI self-critiques revisions RLAIF harmless assistant human labels",
+    "needs_retrieval": true
+   },
+   "abl-L10-05-described": {
+    "search_query": "safe yet non-evasive assistant using guiding principles model critiques and rewrites answers learns from model-generated preference labels",
+    "needs_retrieval": true
+   },
+   "abl-L10-06-named": {
+    "search_query": "LIMA fine-tuning 65B LLaMa model 1,000 curated examples knowledge acquisition",
+    "needs_retrieval": true
+   },
+   "abl-L10-06-described": {
+    "search_query": "paper that pretraining knowledge comes from nearly all of a model's knowledge",
+    "needs_retrieval": true
+   },
+   "abl-L10-07-named": {
+    "search_query": "sycophancy in language models human preference data preference models agree with users' beliefs",
+    "needs_retrieval": true
+   },
+   "abl-L10-07-described": {
+    "search_query": "paper on assistants trained with human ratings favoring agreeable answers",
+    "needs_retrieval": true
+   },
+   "abl-L10-10-named": {
+    "search_query": "RLVR in Tulu 3, training recipe with SFT and DPO",
+    "needs_retrieval": true
+   },
+   "abl-L10-10-described": {
+    "search_query": "recipe for refining base models after pretraining with datasets code and decontaminated evaluations and RL using rewards from automatically checkable answers",
+    "needs_retrieval": true
+   },
+   "abl-L11-01-named": {
+    "search_query": "LoRA inference latency compared to adapters",
+    "needs_retrieval": true
+   },
+   "abl-L11-01-described": {
+    "search_query": "paper that fine-tunes a huge pretrained model by freezing its weights and learning pairs of thin matrices",
+    "needs_retrieval": true
+   },
+   "abl-L11-02-named": {
+    "search_query": "QLoRA 4-bit NormalFloat double quantization paged optimizers fine-tune 65B model single 48GB GPU",
+    "needs_retrieval": true
+   },
+   "abl-L11-02-described": {
+    "search_query": "paper 4-bit precision 65-billion-parameter model 48GB GPU",
+    "needs_retrieval": true
+   },
+   "abl-L11-03-named": {
+    "search_query": "PagedAttention vLLM virtual memory paging KV cache fragmentation cache sharing across requests",
+    "needs_retrieval": true
+   },
+   "abl-L11-03-described": {
+    "search_query": "paper that raises throughput by using non-contiguous fixed-size blocks for LLM key-value cache",
+    "needs_retrieval": true
+   },
+   "abl-L11-06-named": {
+    "search_query": "Medusa extra decoding heads tree-based attention multiple candidate continuations",
+    "needs_retrieval": true
+   },
+   "abl-L11-06-described": {
+    "search_query": "LLM generation paper with tree-structured attention and extra output layers",
+    "needs_retrieval": true
+   },
+   "abl-L12-01-named": {
+    "search_query": "biases found by MT-Bench and Chatbot Arena when using GPT-4 as a judge of chat assistants",
+    "needs_retrieval": true
+   },
+   "abl-L12-01-described": {
+    "search_query": "GPT-4 grading chat assistants answers multi-turn questions crowdsourced voting platform",
+    "needs_retrieval": true
+   },
+   "abl-L12-03-named": {
+    "search_query": "USR dialog response evaluation without references or human labels, unsupervised models",
+    "needs_retrieval": true
+   },
+   "abl-L12-03-described": {
+    "search_query": "open-domain chatbot reply scoring paper combining sub-models no gold responses or human annotations correlates with Topical-Chat and PersonaChat",
+    "needs_retrieval": true
+   },
+   "abl-L12-04-named": {
+    "search_query": "correlation of machine-translation metrics like BLEU with human judgments on Twitter and Ubuntu in unsupervised dialogue response generation",
+    "needs_retrieval": true
+   },
+   "abl-L12-04-described": {
+    "search_query": "word-overlap scores machine translation human ratings chatbot replies Twitter Ubuntu technical chats",
+    "needs_retrieval": true
+   },
+   "abl-L12-05-named": {
+    "search_query": "movie-booking user simulator online reinforcement learning hand-crafted rules collected data",
+    "needs_retrieval": true
+   },
+   "abl-L12-05-described": {
+    "search_query": "public framework for training conversational agents with reinforcement learning from customers looking for films and buying cinema tickets",
+    "needs_retrieval": true
+   },
+   "abl-L12-06-named": {
+    "search_query": "how FairEval's Balanced Position Calibration counteracts bias in LLM ranking due to response order swapping",
+    "needs_retrieval": true
+   },
+   "abl-L12-06-described": {
+    "search_query": "Vicuna-13B calibration by averaging over orderings of candidate answers",
+    "needs_retrieval": true
+   },
+   "abl-L12-08-named": {
+    "search_query": "τ-bench tool-using agents evaluation final database state annotated goal state pass^k metric",
+    "needs_retrieval": true
+   },
+   "abl-L12-08-described": {
+    "search_query": "evaluation suite with language-model-played customer chat and domain API calls and policy guidelines and database and reliability checks",
+    "needs_retrieval": true
+   },
+   "abl-L13-01-named": {
+    "search_query": "RAG models combining pre-trained seq2seq generator with dense Wikipedia index and RAG-Sequence vs RAG-Token formulations",
+    "needs_retrieval": true
+   },
+   "abl-L13-01-described": {
+    "search_query": "seq2seq generator learned retriever Wikipedia vector index non-parametric memory open-domain QA fact-heavy tasks",
+    "needs_retrieval": true
+   },
+   "abl-L13-02-named": {
+    "search_query": "Lost in the Middle study language model accuracy context position",
+    "needs_retrieval": true
+   },
+   "abl-L13-02-described": {
+    "search_query": "language models performance with key document position in lengthy prompt",
+    "needs_retrieval": true
+   },
+   "abl-L13-03-named": {
+    "search_query": "BEIR zero-shot retrieval architectures and BM25 vs dense retrievers",
+    "needs_retrieval": true
+   },
+   "abl-L13-03-described": {
+    "search_query": "neural search models transfer to new domains without in-domain training",
+    "needs_retrieval": true
+   },
+   "abl-L13-04-named": {
+    "search_query": "ColBERT late interaction query document encoding BERT fine-grained token-level similarity",
+    "needs_retrieval": true
+   },
+   "abl-L13-04-described": {
+    "search_query": "paper that encodes queries and documents separately into per-token vectors and scores pairs by summing each query token's best match",
+    "needs_retrieval": true
+   },
+   "abl-L13-06-named": {
+    "search_query": "Self-RAG reflection tokens retrieve critique retrieved passages model outputs",
+    "needs_retrieval": true
+   },
+   "abl-L13-06-described": {
+    "search_query": "paper that trains one language model to fetch passages and emit tokens for relevance and support",
+    "needs_retrieval": true
+   },
+   "abl-L13-07-named": {
+    "search_query": "HyDE instruction-following LLM document generation Contriever zero-shot dense retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L13-07-described": {
+    "search_query": "unsupervised LLM passage generation and document retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L13-08-named": {
+    "search_query": "Ragas metrics for RAG pipelines without human annotations",
+    "needs_retrieval": true
+   },
+   "abl-L13-08-described": {
+    "search_query": "frameworks for scoring pipelines that combine search component with LLM answer writer along faithfulness, context relevance and answer relevance without human-labeled ground truth",
+    "needs_retrieval": true
+   },
+   "abl-L13-09-named": {
+    "search_query": "GraphRAG entity knowledge graph and pre-generated community summaries for global questions over a whole corpus",
+    "needs_retrieval": true
+   },
+   "abl-L13-09-described": {
+    "search_query": "LLM network of extracted entities, write overviews of related clusters, combine partial answers",
+    "needs_retrieval": true
+   },
+   "abl-L13-12-named": {
+    "search_query": "GPT-2 conversational query rewriter weak supervision from ad hoc search sessions using rules and self-supervised learning TREC CAsT",
+    "needs_retrieval": true
+   },
+   "abl-L13-12-described": {
+    "search_query": "GPT-2 fine-tuning for self-contained follow-up questions from multi-turn search chat",
+    "needs_retrieval": true
+   },
+   "abl-L13-13-named": {
+    "search_query": "QReCC dataset subtasks and performance gap",
+    "needs_retrieval": true
+   },
+   "abl-L13-13-described": {
+    "search_query": "dataset multi-turn dialogues web-scale passage collection reformulate follow-up query evidence answer",
+    "needs_retrieval": true
+   },
+   "abl-L14-01-named": {
+    "search_query": "interrupts in MemGPT for control flow between LLM and user during memory tier data transfer",
+    "needs_retrieval": true
+   },
+   "abl-L14-01-described": {
+    "search_query": "language model prompt as main memory and pages information to and from external storage",
+    "needs_retrieval": true
+   },
+   "abl-L14-02-named": {
+    "search_query": "Generative Agents architecture observation reflection planning ablations believability",
+    "needs_retrieval": true
+   },
+   "abl-L14-02-described": {
+    "search_query": "Sims-like town populated with LLM-driven characters that keep a memory stream, reflect, and plan, until one character's idea spreads into a jointly attended Valentine's Day celebration",
+    "needs_retrieval": true
+   },
+   "abl-L14-03-named": {
+    "search_query": "LongMemEval memory abilities indexing and retrieval optimizations",
+    "needs_retrieval": true
+   },
+   "abl-L14-03-described": {
+    "search_query": "evaluation suite conversational AI recall user facts track knowledge updates reason about time know when to abstain",
+    "needs_retrieval": true
+   },
+   "abl-L14-04-named": {
+    "search_query": "LaMP benchmark tasks and personalized model output retrieval",
+    "needs_retrieval": true
+   },
+   "abl-L14-04-described": {
+    "search_query": "benchmark for personalization of classification and generation outputs by retrieving relevant items from a person's own history of past writing",
+    "needs_retrieval": true
+   },
+   "abl-L14-05-named": {
+    "search_query": "NoLiMa needle-in-a-haystack test modification",
+    "needs_retrieval": true
+   },
+   "abl-L14-05-described": {
+    "search_query": "benchmark with vast filler text and accuracy collapse at 32K tokens",
+    "needs_retrieval": true
+   },
+   "abl-L14-06-named": {
+    "search_query": "how Mem0 extracts consolidates and retrieves salient facts from ongoing conversations and what its graph-based memory variant adds on top of the base system",
+    "needs_retrieval": true
+   },
+   "abl-L14-06-described": {
+    "search_query": "chatbot system for pulling out and merging key facts from multi-session dialogues",
+    "needs_retrieval": true
+   },
+   "abl-L14-08-named": {
+    "search_query": "why retrieval-augmented and summarize-and-recall models outperform standard encoder-decoder chatbots in multi-session open-domain chat",
+    "needs_retrieval": true
+   },
+   "abl-L14-08-described": {
+    "search_query": "human-human chats revisiting past sessions",
+    "needs_retrieval": true
+   },
+   "abl-L15-01-named": {
+    "search_query": "how reinforced model and generic replacement labels let Llama2-7b forget books with one GPU hour of finetuning in Who's Harry Potter approach",
+    "needs_retrieval": true
+   },
+   "abl-L15-01-described": {
+    "search_query": "fine-tuning Llama on alternative token labels to erase copyrighted book series",
+    "needs_retrieval": true
+   },
+   "abl-L15-02-named": {
+    "search_query": "ROME causal tracing mid-layer feed-forward modules rank-one weight update",
+    "needs_retrieval": true
+   },
+   "abl-L15-02-described": {
+    "search_query": "causal interventions transformer knowledge tracing targeted MLP weight update",
+    "needs_retrieval": true
+   },
+   "abl-L15-03-named": {
+    "search_query": "what TOFU benchmark forget set synthetic author profiles measure about unlearning methods",
+    "needs_retrieval": true
+   },
+   "abl-L15-03-described": {
+    "search_query": "benchmark with 200 fake writer biographies and 20 quiz questions per biography that checks forgetting methods",
+    "needs_retrieval": true
+   },
+   "abl-L15-04-named": {
+    "search_query": "SISA training partition and isolation of training data",
+    "needs_retrieval": true
+   },
+   "abl-L15-04-described": {
+    "search_query": "approach for deleting user records from trained model by splitting training",
+    "needs_retrieval": true
+   },
+   "abl-L16-01-named": {
+    "search_query": "chain-of-thought prompting with worked exemplars arithmetic and commonsense reasoning",
+    "needs_retrieval": true
+   },
+   "abl-L16-01-described": {
+    "search_query": "math word problems model demonstrations with intermediate steps",
+    "needs_retrieval": true
+   },
+   "abl-L16-02-named": {
+    "search_query": "self-consistency decoding multiple reasoning paths chain-of-thought prompting",
+    "needs_retrieval": true
+   },
+   "abl-L16-02-described": {
+    "search_query": "decoding methods that sample multiple step-by-step solutions and take a majority vote",
+    "needs_retrieval": true
+   },
+   "abl-L16-03-named": {
+    "search_query": "process supervision vs outcome supervision for reward models on MATH problems in PRM800K",
+    "needs_retrieval": true
+   },
+   "abl-L16-03-described": {
+    "search_query": "study on human grading of intermediate model math solution lines for reward model training",
+    "needs_retrieval": true
+   },
+   "abl-L16-04-named": {
+    "search_query": "prompt difficulty in compute-optimal test-time scaling verifier search vs sequential revisions",
+    "needs_retrieval": true
+   },
+   "abl-L16-04-described": {
+    "search_query": "study adaptive inference budget allocation difficulty FLOPs-matched comparisons",
+    "needs_retrieval": true
+   },
+   "abl-L16-05-named": {
+    "search_query": "DeepSeek-R1 pure reinforcement learning self-reflection verification",
+    "needs_retrieval": true
+   },
+   "abl-L16-05-described": {
+    "search_query": "reward-based training model that checks and revises its own work",
+    "needs_retrieval": true
+   },
+   "abl-L16-06-named": {
+    "search_query": "s1 budget forcing test-time compute control",
+    "needs_retrieval": true
+   },
+   "abl-L16-06-described": {
+    "search_query": "model fine-tuned on thousand curated hard problems and inserts 'Wait' token at inference",
+    "needs_retrieval": true
+   },
+   "abl-L16-07-named": {
+    "search_query": "Tree of Thoughts language model exploration self-evaluation backtracking intermediate thoughts performance on Game of 24",
+    "needs_retrieval": true
+   },
+   "abl-L16-07-described": {
+    "search_query": "inference framework with lookahead and backtracking that improves Game of 24 success from 4% to 74%",
+    "needs_retrieval": true
+   },
+   "abl-L16-08-named": {
+    "search_query": "chain-of-thought faithfulness hints in reasoning model prompts",
+    "needs_retrieval": true
+   },
+   "abl-L16-08-described": {
+    "search_query": "safety study hints in prompts model reliance on hints without admitting",
+    "needs_retrieval": true
+   },
+   "abl-L17-01-named": {
+    "search_query": "how ReAct reduces hallucination on HotpotQA and FEVER",
+    "needs_retrieval": true
+   },
+   "abl-L17-01-described": {
+    "search_query": "prompting approach model alternates between writing out thoughts and issuing actions on tasks such as ALFWorld",
+    "needs_retrieval": true
+   },
+   "abl-L17-02-named": {
+    "search_query": "Toolformer self-supervised API calls and result usage",
+    "needs_retrieval": true
+   },
+   "abl-L17-02-described": {
+    "search_query": "model that learns from few examples to insert API calls into its own text",
+    "needs_retrieval": true
+   },
+   "abl-L17-03-named": {
+    "search_query": "WebArena hosted websites GPT-4 performance comparison with humans",
+    "needs_retrieval": true
+   },
+   "abl-L17-03-described": {
+    "search_query": "benchmark for long multi-step browser tasks with online shopping, forums, code collaboration, and content management",
+    "needs_retrieval": true
+   },
+   "abl-L17-04-named": {
+    "search_query": "SWE-bench task building from GitHub issues and pull requests",
+    "needs_retrieval": true
+   },
+   "abl-L17-04-described": {
+    "search_query": "benchmark where model is given Python repository and bug report and asked to patch with Claude 2 fixing under 2% of cases",
+    "needs_retrieval": true
+   },
+   "abl-L17-05-named": {
+    "search_query": "AgentDojo prompt injection attacks and defenses extensibility",
+    "needs_retrieval": true
+   },
+   "abl-L17-05-described": {
+    "search_query": "extensible testbed malicious text hijack assistant tasks email banking travel booking safeguards",
+    "needs_retrieval": true
+   },
+   "abl-L17-07-named": {
+    "search_query": "OSWorld multimodal agents evaluation across Ubuntu Windows macOS weaknesses",
+    "needs_retrieval": true
+   },
+   "abl-L17-07-described": {
+    "search_query": "benchmark for AI models operating on Ubuntu, macOS, and Windows desktops with execution-based checker script",
+    "needs_retrieval": true
+   },
+   "abl-L17-08-named": {
+    "search_query": "BAGEL round-trips between LM labeler and zero-shot LM agent synthetic demonstrations",
+    "needs_retrieval": true
+   },
+   "abl-L17-08-described": {
+    "search_query": "method with one model captioning random action sequences and another re-executing them to build demonstrations for models acting on websites or APIs",
+    "needs_retrieval": true
+   },
+   "abl-L17-10-named": {
+    "search_query": "SWE-RL rule-based similarity reward open-source software evolution data Llama 3 GitHub issue fixing",
+    "needs_retrieval": true
+   },
+   "abl-L17-10-described": {
+    "search_query": "Llama 3 model trained with rewards based on patch matching developer fixes from repository histories",
+    "needs_retrieval": true
+   },
+   "abl-L17-13-named": {
+    "search_query": "joint optimization of cost and accuracy in agent benchmarking practices, problems with inadequate holdout sets",
+    "needs_retrieval": true
+   },
+   "abl-L17-13-described": {
+    "search_query": "autonomous LLM systems benchmarking criticism cost held-out sets reproducibility",
+    "needs_retrieval": true
+   },
+   "abl-L18-01-named": {
+    "search_query": "wav2vec 2.0 masking latent speech representations and contrastive task over quantized targets during pretraining",
+    "needs_retrieval": true
+   },
+   "abl-L18-01-described": {
+    "search_query": "pretraining approach for accurate recognizers with limited transcribed recordings",
+    "needs_retrieval": true
+   },
+   "abl-L19-01-named": {
+    "search_query": "Whisper training on weakly supervised multilingual audio zero-shot transfer to standard benchmarks",
+    "needs_retrieval": true
+   },
+   "abl-L19-01-described": {
+    "search_query": "audio transcription model trained on noisy internet transcripts zero-shot",
+    "needs_retrieval": true
+   },
+   "abl-L20-01-named": {
+    "search_query": "SoundStream residual vector quantizer with quantizer dropout bitrate range",
+    "needs_retrieval": true
+   },
+   "abl-L20-01-described": {
+    "search_query": "learned compression model for speech and music with convolutional encoder-decoder stacked residual quantization adversarial training beats Opus at quarter bitrate",
+    "needs_retrieval": true
+   },
+   "abl-L21-01-named": {
+    "search_query": "Moshi model parallel streams user speech and model speech, Inner Monologue method predicting text before audio tokens",
+    "needs_retrieval": true
+   },
+   "abl-L21-01-described": {
+    "search_query": "spoken chatbot generates voice directly as codec tokens models both speakers in parallel handles interruptions without fixed turns predicts aligned word tokens before sound",
+    "needs_retrieval": true
+   },
+   "abl-L22-03-named": {
+    "search_query": "indirect prompt injection attacks on LLM-integrated applications",
+    "needs_retrieval": true
+   },
+   "abl-L22-03-described": {
+    "search_query": "security paper malicious instructions in web pages or documents read by AI assistant",
+    "needs_retrieval": true
+   },
+   "abl-L23-02-named": {
+    "search_query": "LLaVA language-only GPT-4 multimodal instruction-following data generation vision encoder LLM connection",
+    "needs_retrieval": true
+   },
+   "abl-L23-02-described": {
+    "search_query": "model linking pretrained image encoder to chat LLM fine-tuned on image-grounded conversations with text-only GPT-4 ScienceQA",
+    "needs_retrieval": true
+   },
+   "abl-L24-01-named": {
+    "search_query": "induction heads mechanism behind in-context learning transformer models",
+    "needs_retrieval": true
+   },
+   "abl-L24-01-described": {
+    "search_query": "transformer prompt interpretability attention circuits",
+    "needs_retrieval": true
+   },
+   "dev-st-01": {
+    "search_query": "LaMDA safety mechanisms for filtering unsafe responses",
+    "needs_retrieval": true
+   },
+   "dev-st-02": {
+    "search_query": "Dense Passage Retrieval bi-encoder training and performance on open-domain QA benchmarks",
+    "needs_retrieval": true
+   },
+   "dev-st-03": {
+    "search_query": "multi-head self-attention mechanism original Transformer paper recurrence replacement",
+    "needs_retrieval": true
+   },
+   "dev-st-04": {
+    "search_query": "BERT pre-training objectives masked language model vs left-to-right language modeling",
+    "needs_retrieval": true
+   },
+   "dev-st-05": {
+    "search_query": "how Direct Preference Optimization eliminates need for separate reward model during alignment",
+    "needs_retrieval": true
+   },
+   "dev-st-06": {
+    "search_query": "how LoRA reduces trainable parameters using low-rank decomposition of weight update matrices",
+    "needs_retrieval": true
+   },
+   "dev-st-07": {
+    "search_query": "how Retrieval-Augmented Generation combines retriever with sequence-to-sequence generator and improves factual accuracy",
+    "needs_retrieval": true
+   },
+   "dev-st-08": {
+    "search_query": "how MemGPT organizes memory into a hierarchy that mirrors an operating system's virtual memory to support long conversations",
+    "needs_retrieval": true
+   },
+   "dev-st-09": {
+    "search_query": "chain-of-thought prompting arithmetic and commonsense reasoning in large language models",
+    "needs_retrieval": true
+   },
+   "dev-st-10": {
+    "search_query": "ReAct framework interleaving reasoning traces with actions task completion for language model agents",
+    "needs_retrieval": true
+   }
+  }
+ ]
+}
