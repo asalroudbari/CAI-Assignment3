@@ -1,0 +1,21 @@
+single-turn (10)
+multi-turn (3 dialogues)
+ablation sample (20)
+probes (4)
+re-run single-turn on a fresh bot
+
+SUMMARY
+  hit_rate_single_turn         1.000
+  hit_rate_multi_turn_last     1.000
+  hit_rate_multi_turn_all      1.000
+  hit_rate_ablation_sample     0.950
+  errors                       0
+  latency_mean_s               2.910
+  latency_max_s                5.220
+  prompt_tokens_max            2297
+  answer_tokens_mean           111.700
+  truncated_at_max_tokens      0
+  answers_with_markers         41/42
+  rerun_identical              10/10
+
+wrote pace/results/run3-llm-decisions/Llama-3.1-8B-Instruct.json

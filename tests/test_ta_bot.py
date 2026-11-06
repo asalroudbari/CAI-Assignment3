@@ -6,8 +6,8 @@ anything that depends on the model's output. Here the endpoint call is replaced 
 fake: the planning call gets a chosen JSON plan, the verifier call a chosen verdict, and the
 answer call a fixed reply. Retrieval runs for real against the shipped corpus.
 
-What these tests cover is the code around the model: wiring, grounding, fail-closed behaviour,
-updates, deletion and isolation. Whether the model's judgements are right (which facts it
+What these tests cover is the code around the model: wiring, fail-closed behaviour, follow-up
+carry-over, updates, deletion and isolation. Whether the model's judgements are right (which facts it
 proposes, which it refuses) is checked against a real endpoint by pace/memory_check.py.
 
     python3 -m unittest discover -s tests -v
@@ -25,7 +25,8 @@ sys.path.insert(0, str(ROOT))
 import ta_bot  # noqa: E402
 from ta_bot import TABot  # noqa: E402
 
-DEFAULT_PLAN = {"about_student": False, "needs_retrieval": True, "search_query": "", "facts": [], "forget": []}
+DEFAULT_PLAN = {"about_student": False, "needs_retrieval": True, "search_query": "", "refers_to": [],
+                "facts": [], "forget": []}
 
 
 class FakeLLM:
@@ -41,6 +42,7 @@ class FakeLLM:
         self.verdict = verdict
         self.answer_prompts: list[list[dict]] = []  # messages of every answer call
         self.verify_requests: list[dict] = []  # what the verifier was shown
+        self.route_inputs: list[str] = []  # what the planning call was shown
 
     def __call__(self, messages, max_tokens=None):
         if messages[0]["content"] == ta_bot.VERIFY_PROMPT:
@@ -51,6 +53,7 @@ class FakeLLM:
             return json.dumps({"verdicts": [{"reason": "scripted", "store": self.verdict}
                                             for _ in request["candidates"]]})
         if messages[0]["content"] == ta_bot.ROUTER_PROMPT:
+            self.route_inputs.append(messages[1]["content"])
             latest = messages[1]["content"].rsplit("Latest message: ", 1)[1]
             plan = self.plans.get(latest, DEFAULT_PLAN)
             return plan if isinstance(plan, str) else json.dumps(plan)
@@ -102,12 +105,13 @@ class ContractTests(unittest.TestCase):
 
 
 class RetrievalDecisionTests(unittest.TestCase):
-    def test_without_a_plan_every_question_with_content_retrieves(self):
+    def test_without_a_plan_every_message_retrieves(self):
         bot = make_bot(use_router=False)
         bot._complete = FakeLLM()
         for q in ("What do you know about RLHF?", "Do you remember the DPO paper? How does it differ from PPO?"):
             self.assertTrue(bot.chat("s-" + q, "u", q)["citations"], q)
-        self.assertEqual(bot.chat("s-thanks", "u", "thanks!")["citations"], [])
+        unusable = FakeLLM({"How does LoRA work?": "Sure, let me search."})
+        self.assertTrue(make_bot(unusable).chat("s", "u", "How does LoRA work?")["citations"])
 
     def test_question_about_the_student_skips_retrieval(self):
         q = "What is my name?"
@@ -115,10 +119,10 @@ class RetrievalDecisionTests(unittest.TestCase):
             fake = FakeLLM({q: plan(about_student=True, needs_retrieval=needs)})
             self.assertEqual(make_bot(fake).chat("s", "u", q)["citations"], [])
 
-    def test_plan_cannot_skip_a_paper_question(self):
-        q = "How does PagedAttention manage the KV cache?"
+    def test_plan_decides_retrieval(self):
+        q = "thanks, that helped a lot!"
         fake = FakeLLM({q: plan(needs_retrieval=False)})
-        self.assertIn("L11-03", make_bot(fake).chat("s", "u", q)["citations"])
+        self.assertEqual(make_bot(fake).chat("s", "u", q)["citations"], [])
 
     def test_follow_up_rewrite_finds_the_topic(self):
         first = "How does vLLM's PagedAttention manage KV cache memory?"
@@ -126,6 +130,24 @@ class RetrievalDecisionTests(unittest.TestCase):
         bot = make_bot(fake)
         bot.chat("s", "u", first)
         self.assertIn("L11-03", bot.chat("s", "u", "Can you elaborate?")["citations"])
+
+    def test_planner_sees_discussed_papers_and_carries_what_it_points_to(self):
+        first = "How does vLLM's PagedAttention manage KV cache memory?"
+        follow = "What are its limitations?"
+        fake = FakeLLM({follow: plan(refers_to=[1, 7])})  # 7 is out of range and ignored
+        bot = make_bot(fake)
+        bot.chat("s", "u", first)
+        out = bot.chat("s", "u", follow)
+        self.assertIn("Papers discussed so far:\n[1] " + bot._papers["L11-03"], fake.route_inputs[-1])
+        self.assertIn("L11-03", out["citations"])
+
+    def test_pronoun_alone_carries_nothing(self):
+        # "it" here starts a new topic; the planner says so and the earlier paper stays out.
+        first = "How does vLLM's PagedAttention manage KV cache memory?"
+        follow = "What is DPO and how does it differ from RLHF?"
+        bot = make_bot(FakeLLM({follow: plan(refers_to=[])}))
+        bot.chat("s", "u", first)
+        self.assertNotIn("L11-03", bot.chat("s", "u", follow)["citations"])
 
     def test_first_turn_ignores_the_rewrite(self):
         # Keeps first-turn retrieval identical to the system measured in the ablation.
@@ -167,21 +189,22 @@ class MemoryWriteTests(unittest.TestCase):
         make_bot(fake).chat("s", "u", msg)
         self.assertEqual(fake.verify_requests, [{"message": msg, "candidates": [fact("project", "tokenization")]}])
 
-    def test_ungrounded_facts_never_reach_the_verifier(self):
+    def test_verifier_sees_only_the_message_not_excerpts_or_history(self):
+        first = "How does vLLM's PagedAttention manage KV cache memory?"
         msg = "Can you explain how RLHF works?"
-        fake = FakeLLM({msg: plan(facts=[fact("interest", "reinforcement learning from human feedback"),
-                                         fact("project", "Constitutional AI")])}, verdict=True)
+        fake = FakeLLM({msg: plan(facts=[fact("interest", "PagedAttention")])}, verdict=False)
         bot = make_bot(fake)
+        bot.chat("s", "u", first)
         bot.chat("s", "u", msg)
+        self.assertEqual(fake.verify_requests, [{"message": msg, "candidates": [fact("interest", "PagedAttention")]}])
         self.assertEqual(bot.get_memory("u"), [])
-        self.assertEqual(fake.verify_requests, [])
 
-    def test_name_must_look_like_a_name(self):
-        msg = "My name is Jo. My GTID is 903412345."
-        fake = FakeLLM({msg: plan(facts=[fact("name", "Jo"), fact("name", "903412345"),
-                                         fact("color", "blue")])}, verdict=True)
+    def test_unknown_fact_types_never_reach_the_verifier(self):
+        msg = "My name is Jo. My favourite colour is blue."
+        fake = FakeLLM({msg: plan(facts=[fact("name", "Jo"), fact("color", "blue")])}, verdict=True)
         bot = make_bot(fake)
         bot.chat("s", "u", msg)
+        self.assertEqual(fake.verify_requests[0]["candidates"], [fact("name", "Jo")])
         self.assertEqual(bot.get_memory("u"), ["Name: Jo"])
 
     def test_no_candidates_no_verifier_call(self):

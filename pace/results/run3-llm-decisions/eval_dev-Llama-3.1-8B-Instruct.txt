@@ -1,0 +1,45 @@
+============================================================
+PREFLIGHT — structural checks
+------------------------------------------------------------
+  chat() shape:    ✓  {answer: str, citations: list}
+  reset_memory():  ✓
+  get_memory():    ✓  list[str] (0 items)
+  All preflight checks passed.
+
+============================================================
+SINGLE-TURN RETRIEVAL
+------------------------------------------------------------
+  dev-st-01: ✓  cited=['L01-03', 'L16-05', 'L01-04']  gold=['L01-03']
+  dev-st-02: ✓  cited=['L04-04', 'L13-03', 'L14-08']  gold=['L04-04']
+  dev-st-03: ✓  cited=['L08-01', 'L24-01', 'L09-01']  gold=['L08-01']
+  dev-st-04: ✓  cited=['L09-01', 'L02-02', 'L01-04']  gold=['L09-01']
+  dev-st-05: ✓  cited=['L10-04', 'L10-10', 'L09-07']  gold=['L10-04']
+  dev-st-06: ✓  cited=['L11-01', 'L08-05', 'L11-02']  gold=['L11-01']
+  dev-st-07: ✓  cited=['L13-01', 'L13-06', 'L13-09']  gold=['L13-01']
+  dev-st-08: ✓  cited=['L14-01', 'L11-03', 'L14-06']  gold=['L14-01']
+  dev-st-09: ✓  cited=['L16-01', 'L16-05', 'L16-02']  gold=['L16-01']
+  dev-st-10: ✓  cited=['L17-01', 'L12-08', 'L17-08']  gold=['L17-01']
+
+============================================================
+MULTI-TURN RETRIEVAL
+------------------------------------------------------------
+  dev-mt-01: ✓  cited=['L13-03', 'L13-04', 'L12-08', 'L13-06']  gold=[]
+  dev-mt-02: ✓  cited=['L10-01', 'L10-05', 'L10-06', 'L14-03']  gold=[]
+  dev-mt-03: ✓  cited=['L11-03', 'L14-01', 'L11-06']  gold=[]
+
+============================================================
+MEMORY PROBES
+------------------------------------------------------------
+  dev-mp-01 (positive): PASS — store=✓ output=✓
+  dev-mp-02 (positive): PASS — store=✓ output=✓
+
+============================================================
+SUMMARY (dev set — not your final grade)
+------------------------------------------------------------
+  Single-turn hit-rate:  100.0%  (10 questions)
+  Multi-turn hit-rate:   100.0%  (3 dialogues)
+  Memory probes:         2/2 passed
+
+Note: This uses dev data only. Your grade comes from
+the hidden set on PACE-ICE with the Llama Judge.
+============================================================

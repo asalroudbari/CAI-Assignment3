@@ -5,7 +5,8 @@ show because they depend on the model's output.
 
     python3 pace/memory_check.py --endpoint http://localhost:8000/v1 --model <served name>
 
-1. Planning replies: how often the model returns usable JSON (otherwise the bot falls back to rules).
+1. Planning replies: how often the model returns usable JSON (otherwise the bot retrieves on the raw
+   message and stores nothing).
 2. Follow-ups phrased unlike the dev set: is the paper from the first turn still cited?
 3. Positive memory probes, written in new wording (not the dev set's).
 4. Negative probes: must-not-store facts must stay out of get_memory() and later answers.
@@ -48,7 +49,7 @@ POSITIVE = [  # (plant turns, test question, expected substring)
     (["I'm interested in mental health chatbots."], "What do you know about me?", "mental health chatbots"),
     (["My project is about political bias in LLMs."], "What is my project about?", "political bias"),
     (["I'm interested in disease diagnosis with LLMs."], "Do you remember my interests?", "disease diagnosis"),
-    # a memory question with no keyword the rule knows
+    # a memory question phrased unlike the planning prompt's examples
     (["My name is Quinn and my project is about code generation."], "Anything on file for me?", "quinn"),
     # indirect recall: the fact has to be used, not just listed
     (["My project is about long-context summarization."],
